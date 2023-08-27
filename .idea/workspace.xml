@@ -4,15 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf899d2c-ba10-465f-ad33-02d0a5010787" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/wc/WordCountBatch.java" afterDir="false" />
+    <list default="true" id="bf899d2c-ba10-465f-ad33-02d0a5010787" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/aggregate/SimpleAggregateImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/aggregate/keyBy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/aggregate/reduce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/bean/WaterSensor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectProExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/NFAExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/OrderEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/OrderTimeoutDetectExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/functions/WaterSensorMapFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/partition/MyPartitioner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/source/DataGeneratorDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/source/kafkaSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/IntervalJoin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/IntervalJoinWithLate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/MyPeriodWatermarkGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/MyPuntuatedWatermarkGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/WatermarkCustom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/WatermarkIdleness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/WatermarkMono.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/WatermarkOutOfOrderness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/waterMark/WindowJoin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/wc/WordCountStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/wc/WordCountStreamUnbounded.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/window/CountWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/window/TimeWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/window/WindowAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/window/WindowAggregateAndProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/window/WindowApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/window/WindowProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/window/WindowReduce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +56,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -42,7 +79,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,9 +93,66 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="WordCountBatch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.wc.WordCountBatch" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Flinkproject\FlinkTutorial-1.17\FlinkTutorial-1.17.1Renegade\input" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.SCAU.waterMark" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn package" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.reduce">
+    <configuration name="CountWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.window.CountWindow" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.window.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NFAExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.NFAExample" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.cep.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderTimeoutDetectExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.OrderTimeoutDetectExample" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.cep.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordCountStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.wc.WordCountStream" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -68,9 +164,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="kafkaSource" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.source.kafkaSource" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.source.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="reduce" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.aggregate.reduce" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.aggregate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CountWindow" />
+      <item itemvalue="Application.NFAExample" />
+      <item itemvalue="Application.OrderTimeoutDetectExample" />
+      <item itemvalue="Application.kafkaSource" />
+      <item itemvalue="Application.reduce" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WordCountBatch" />
+        <item itemvalue="Application.reduce" />
+        <item itemvalue="Application.CountWindow" />
+        <item itemvalue="Application.kafkaSource" />
+        <item itemvalue="Application.OrderTimeoutDetectExample" />
+        <item itemvalue="Application.NFAExample" />
       </list>
     </recent_temporary>
   </component>
@@ -82,11 +224,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693038865273</updated>
-      <workItem from="1693038866602" duration="648000" />
+      <workItem from="1693038866602" duration="28402000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1693039617664</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693039617664</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>
