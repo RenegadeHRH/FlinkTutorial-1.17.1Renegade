@@ -25,6 +25,7 @@ public class LoginFailDetectExample {
                         new LoginEvent("user_1", "192.168.0.1", "fail", 2000L),
                         new LoginEvent("user_1", "192.168.0.2", "fail", 3000L),
                         new LoginEvent("user_2", "192.168.1.29", "fail", 4000L),
+                        new LoginEvent("user_1", "171.56.23.10", "success", 4500L),
                         new LoginEvent("user_1", "171.56.23.10", "fail", 5000L),
                         new LoginEvent("user_2", "192.168.1.29", "fail", 7000L),
                         new LoginEvent("user_2", "192.168.1.29", "fail", 8000L),
