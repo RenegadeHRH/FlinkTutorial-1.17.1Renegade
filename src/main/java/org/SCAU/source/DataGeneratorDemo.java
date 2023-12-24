@@ -32,7 +32,7 @@ public class DataGeneratorDemo {
                 },
                 100,
 
-                RateLimiterStrategy.perSecond(1),
+                RateLimiterStrategy.perSecond(10),
                 Types.STRING
         );
 
