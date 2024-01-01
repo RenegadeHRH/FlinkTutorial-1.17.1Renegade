@@ -4,33 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DataStreamAPI/FirstStreamProject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPTestEasy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/env/EnvDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/functions/FilterFunctionImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/moa/Flink/ClassifyAndUpdateClassifierFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/moa/Flink/LearningProcessFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/moa/Flink/PerformanceFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/moa/Flink/RRBFSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/moa/Flink/RandomSamplingProcessFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/moa/Flink/RandomSamplingSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/moa/Flink/TrainTestRun.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/model/StockEventNew.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/model/socialMediaStocks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/source/KafkaConsumerProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/transform/Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/transform/FlatmapDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/OutputUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/OrderTimeoutDetectExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/OrderTimeoutDetectExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/source/DataGeneratorDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/source/DataGeneratorDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/source/kafkaSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/source/kafkaSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPTestEasy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPTestEasy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-cep/1.18.0/flink-cep-1.18.0-sources.jar!/org/apache/flink/cep/pattern/Pattern.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
@@ -60,11 +40,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CEPTestEasy (1).executor": "Run",
+    "Application.CEPTestEasy (2).executor": "Run",
+    "Application.CEPTestEasy (3).executor": "Run",
+    "Application.CEPTestEasy (4).executor": "Run",
+    "Application.CEPTestEasy (5).executor": "Run",
     "Application.CEPTestEasy.executor": "Run",
     "Application.DataGeneratorDemo.executor": "Run",
     "Application.KafkaConsumerProgram (1).executor": "Run",
     "Application.KafkaConsumerProgram (2).executor": "Run",
     "Application.KafkaConsumerProgram.executor": "Run",
+    "Application.LoginFailDetectExample (1).executor": "Run",
+    "Application.LoginFailDetectExample (2).executor": "Run",
+    "Application.LoginFailDetectExample (3).executor": "Run",
+    "Application.LoginFailDetectExample (4).executor": "Run",
+    "Application.LoginFailDetectExample (5).executor": "Run",
+    "Application.LoginFailDetectExample.executor": "Run",
+    "Application.LoginFailDetectProExample.executor": "Run",
     "Application.OrderTimeoutDetectExample.executor": "Run",
     "Application.kafkaSource.executor": "Run",
     "Application.kafkaTest1.executor": "Run",
@@ -83,7 +75,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "http.proxy",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -100,9 +92,9 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.CEPTestEasy">
-    <configuration name="CEPTestEasy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPTestEasy" />
+  <component name="RunManager" selected="Application.LoginFailDetectExample (2)">
+    <configuration name="LoginFailDetectExample (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -114,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KafkaConsumerProgram (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.source.KafkaConsumerProgram" />
+    <configuration name="LoginFailDetectExample (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.source.*" />
+          <option name="PATTERN" value="org.SCAU.cep.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KafkaConsumerProgram (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.source.KafkaConsumerProgram" />
+    <configuration name="LoginFailDetectExample (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.source.*" />
+          <option name="PATTERN" value="org.SCAU.cep.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,12 +132,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KafkaConsumerProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.source.KafkaConsumerProgram" />
+    <configuration name="LoginFailDetectExample (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.source.*" />
+          <option name="PATTERN" value="org.SCAU.cep.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,12 +145,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="kafkaTest1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.source.kafkaTest1" />
+    <configuration name="LoginFailDetectExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.source.*" />
+          <option name="PATTERN" value="org.SCAU.cep.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -167,19 +159,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CEPTestEasy" />
-      <item itemvalue="Application.KafkaConsumerProgram" />
-      <item itemvalue="Application.KafkaConsumerProgram (1)" />
-      <item itemvalue="Application.KafkaConsumerProgram (2)" />
-      <item itemvalue="Application.kafkaTest1" />
+      <item itemvalue="Application.LoginFailDetectExample (1)" />
+      <item itemvalue="Application.LoginFailDetectExample (2)" />
+      <item itemvalue="Application.LoginFailDetectExample (4)" />
+      <item itemvalue="Application.LoginFailDetectExample (5)" />
+      <item itemvalue="Application.LoginFailDetectExample" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CEPTestEasy" />
-        <item itemvalue="Application.KafkaConsumerProgram (2)" />
-        <item itemvalue="Application.KafkaConsumerProgram" />
-        <item itemvalue="Application.KafkaConsumerProgram (1)" />
-        <item itemvalue="Application.kafkaTest1" />
+        <item itemvalue="Application.LoginFailDetectExample (2)" />
+        <item itemvalue="Application.LoginFailDetectExample (5)" />
+        <item itemvalue="Application.LoginFailDetectExample (1)" />
+        <item itemvalue="Application.LoginFailDetectExample" />
+        <item itemvalue="Application.LoginFailDetectExample (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -200,12 +192,33 @@
       <updated>1702876336716</updated>
       <workItem from="1702876337904" duration="1446000" />
       <workItem from="1702887268861" duration="3680000" />
-      <workItem from="1702891166531" duration="53222000" />
+      <workItem from="1702891166531" duration="63796000" />
+      <workItem from="1703937835945" duration="904000" />
+      <workItem from="1703940478897" duration="6716000" />
+      <workItem from="1704004075221" duration="2456000" />
+      <workItem from="1704034461273" duration="7666000" />
+      <workItem from="1704091194194" duration="598000" />
+      <workItem from="1704097473380" duration="664000" />
+      <workItem from="1704104991697" duration="114000" />
+      <workItem from="1704105123986" duration="7140000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <option name="closed" value="true" />
+      <created>1703406912499</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703406912499</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

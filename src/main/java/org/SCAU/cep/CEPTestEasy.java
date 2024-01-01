@@ -6,17 +6,25 @@ import org.SCAU.utils.OutputUtils;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
+import org.apache.flink.api.common.time.Time;
 import org.apache.flink.cep.CEP;
+import org.apache.flink.cep.PatternSelectFunction;
 import org.apache.flink.cep.PatternStream;
 import org.apache.flink.cep.functions.PatternProcessFunction;
 import org.apache.flink.cep.pattern.Pattern;
 import org.apache.flink.cep.pattern.conditions.SimpleCondition;
+import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.datastream.DataStream;
+import org.apache.flink.streaming.api.datastream.DataStreamSink;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 import org.apache.flink.util.Collector;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,23 +32,28 @@ import java.util.Map;
 import java.util.Properties;
 
 public class CEPTestEasy {
-    private static class StockPatternProcessFunction extends PatternProcessFunction<StockEventNew, OutputUtils.OutputRecord> {
+
+    //sink,将keyby结果保存为文件
+    public static class PartitionSink extends RichSinkFunction<socialMediaStocks> {
+
+        private String path=".\\output";
+        private OutputStream out;
 
         @Override
-        public void processMatch(Map<String, List<StockEventNew>> pattern,
-                                 Context ctx,
-                                 Collector<OutputUtils.OutputRecord> out) throws Exception {
-
-            StockEventNew event = pattern.get("first").get(0);
-
-            OutputUtils.OutputRecord output = new OutputUtils.OutputRecord();
-            output.setEvent(event);
-
-            out.collect(output);
+        public void open(Configuration parameters) throws Exception {
+            // 为每个子任务打开文件
+            File file = new File(path + getRuntimeContext().getIndexOfThisSubtask());
+            out = new FileOutputStream(file);
         }
 
+        @Override
+        public void invoke(socialMediaStocks value) throws Exception {
+            // 写入对应分区文件
+            out.write(value.toString().getBytes());
+        }
     }
     public static void main(String[] args) throws Exception {
+
 
         // 创建执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
@@ -50,6 +63,7 @@ public class CEPTestEasy {
         properties.setProperty("bootstrap.servers", "192.168.199.165:5092");
         properties.setProperty("group.id", "test");
         properties.setProperty("auto.offset.reset", "earliest");
+
 
         //创建消费者，从kafka的testtopic获取事件
         FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<>(
@@ -64,112 +78,99 @@ public class CEPTestEasy {
                     //构造Event
 //                    socialMediaStocks event = new socialMediaStocks();
                     socialMediaStocks event = new socialMediaStocks(fields[0],fields[1],fields[2],fields[3],fields[4],fields[5],fields[6],fields[7]);
+//                    System.out.println(event.toString());
+
+                    //                    System.out.print("Construct Evvent\n");
                     return event;
-                })
-//                .assignTimestampsAndWatermarks(
-//                        //分配时间戳和水印，来源于数据的字段
-//                        WatermarkStrategy
-//                                //forBoundedOutOfOrderness(有界乱序数据)：
-//                                // 主要针对乱序流，由于乱序流中需要等待迟到数据到齐，所以必须设置一个固定量的延迟时间。这时生成水位线的时间戳，
-//                                // 就是当前数据流中最大的时间戳减去延迟的结果，相当于把表调慢，当前时钟会滞后于数据的最大时间戳。
-//                                // 这个方法需要传入一个 maxOutOfOrderness 参数，表示“ 最大乱序程度 ” ，它表示数据流中乱序数据时间戳的最大差值。
-//
-//                                .<StockEventNew>forBoundedOutOfOrderness(Duration.ofDays(30))
-//
-//                                .withTimestampAssigner(
-//                                        //分配时间戳
-//                                        new SerializableTimestampAssigner<StockEventNew>() {
-//                                            //
-//                                            @Override
-//                                            public long extractTimestamp(StockEventNew element, long recordTimestamp) {
-//                                                //原数据是以日为单位
-//                                                return element.date.getTime();
-//                                                //单机运行，暂时用系统时间表示
-////                                                return  System.currentTimeMillis();
-//                                            }
-//
-//                                        }
-//
-//                                )
-//                )
+                }).assignTimestampsAndWatermarks(WatermarkStrategy
+                        .<socialMediaStocks>forBoundedOutOfOrderness(Duration.ofDays(3000))
+                       .withTimestampAssigner(new SerializableTimestampAssigner<socialMediaStocks>() {
+                            @Override
+                            public long extractTimestamp(socialMediaStocks element, long recordTimestamp) {
+//                                System.out.print("Timestamp: " + recordTimestamp+"\n");
+//                                System.out.print(element.getDate().getTime()+"\n");
+                                return element.getDate().getTime();
+                            }
+                        })
+                )
+
                 .keyBy(r->r.symbol);
-        //定义复杂事件规则
+
+//        查看keyby效果
+//        stream.addSink(new PartitionSink());
+
                 SimpleCondition<socialMediaStocks> priceRise = new SimpleCondition<socialMediaStocks>() {
             @Override
             public boolean filter(socialMediaStocks event) {
                 return event.getPriceChange() > 0.01;
             }
         };
-        Pattern<socialMediaStocks, socialMediaStocks> pattern1 = Pattern.<socialMediaStocks>begin("first")
-        .where(priceRise)
-        .next("second")
-        .where(priceRise)
-        .next("third")
-        .where(priceRise);
-        PatternStream <socialMediaStocks> patternStream=CEP.pattern(stream,pattern1);
-
-        //定义复杂事件规则
-        //规则1：连续3天股票上涨超过5%
-        //定义简单条件
-//        SimpleCondition<StockEventNew> priceRise = new SimpleCondition<StockEventNew>() {
+//        Pattern<socialMediaStocks, socialMediaStocks> pattern1 = Pattern.<socialMediaStocks>begin("first")
+//        .where(new SimpleCondition<socialMediaStocks>() {
 //            @Override
-//            public boolean filter(StockEventNew event) {
-//                return event.getPriceChange() > 0.05;
+//            public boolean filter(socialMediaStocks value) throws Exception {
+//                return value.high>1;
 //            }
-//        };
-//        //定义规则
-//        Pattern<StockEventNew, StockEventNew> pattern1 = Pattern.<StockEventNew>begin("first")
-//                .where(priceRise)
-//                .next("second")
-//                .where(priceRise)
-//                .next("third")
-//                .where(priceRise);
+//        });
+//        .next("second")
+//        .where(priceRise)
+//        .next("third")
+//        .where(priceRise);
+        Pattern<socialMediaStocks,socialMediaStocks> pattern1 = Pattern.<socialMediaStocks>begin("first").where(
+                new SimpleCondition<socialMediaStocks>() {
+                    @Override
+                    public boolean filter(socialMediaStocks value) throws Exception {
 
-        //应用规则到流上
-//        PatternStream<StockEventNew> PatternStream1 = CEP.pattern(stream,pattern1);
-//        PatternStream<StockEventNew> patternStream = CEP.pattern(stream, patterns);
-//        List<PatternStream<StockEventNew>> patternStreamList = new ArrayList<>();
-//        for(Pattern<StockEventNew, StockEventNew> pattern : patterns){
-//            PatternStream<StockEventNew> patternStream = CEP.pattern(stream, pattern);
-//            patternStreamList.add(patternStream);
-//        }
-        //处理匹配事件
+                        return value.symbol.equals("FB");
+                    }
+                }
+        );
 
-//        List<SingleOutputStreamOperator<OutputUtils.OutputRecord>> outputStreamOperatorList= new ArrayList<>();
+        //应用到流上
+        PatternStream <socialMediaStocks> patternStream=CEP.pattern(stream,pattern1);
+        // 4. 将匹配到的复杂事件选择出来，然后包装成字符串报警信息输出
+        patternStream.select(
+                new PatternSelectFunction<socialMediaStocks, String >() {
+                    @Override
+                    public String select(Map<String, List<socialMediaStocks>> pattern) throws Exception {
+                        socialMediaStocks event1st =pattern.get("first").get(0);
+//                        System.out.print("?");
+                        return event1st.toString();
+                    }
 
-//        for(PatternStream<StockEventNew> PS:patternStreamList) {
-//            SingleOutputStreamOperator<OutputUtils.OutputRecord> output = PS
-//                    .process(
-//
-//                    )
-//        }
-//        try {
-//
-//
-//            SingleOutputStreamOperator<String> warningStream1 = PatternStream1
-//                    .process(new PatternProcessFunction<StockEventNew, String>() {
-//                        @Override
-//                        public void processMatch(Map<String, List<StockEventNew>> match, Context ctx, Collector<String> out) throws Exception {
-//                            // 提取三次登录失败事件
-////                        pattern1.getName();
-//                            System.out.print('1');
-//                            StockEventNew firstEvent = match.get("first").get(0);
-//                            StockEventNew secondEvent = match.get("second").get(0);
-//                            StockEventNew thirdEvent = match.get("third").get(0);
-//                            System.out.print(firstEvent.toString());
-//                            System.out.print(secondEvent.toString());
-//                            out.collect(firstEvent.ticker + " 连续三天上涨5%：起始日期" +
-//                                    firstEvent.date.toString() + ", 事件index" +
-//                                    firstEvent.index+","+secondEvent.index+","+thirdEvent.index);
-//
-//                        }
-//                    });
-//            warningStream1.print();
-//        }
-//        catch (Exception e){
-//            System.out.print(e.toString());
-//        }
-        stream.print();
+
+                }
+        ).print();
+        Pattern<socialMediaStocks, socialMediaStocks> pattern2 =Pattern.<socialMediaStocks>begin("start").where(new SimpleCondition<socialMediaStocks>() {
+            @Override
+            public boolean filter(socialMediaStocks value) throws Exception {
+                System.out.print("first");
+
+                return true;
+            }
+        }).next("end").where(new SimpleCondition<socialMediaStocks>() {
+            @Override
+            public boolean filter(socialMediaStocks end) throws Exception {
+
+                double threshold = 1.01;
+                return end.close >= threshold * end.close;
+            }
+        });
+
+        PatternStream<socialMediaStocks> patternStream2 = CEP.pattern(stream, pattern2);
+//        System.out.print("???");
+
+        DataStream<String> result = patternStream2.select(new PatternSelectFunction<socialMediaStocks, String>() {
+            @Override
+            public String select(Map<String, List<socialMediaStocks>> pattern) throws Exception {
+                System.out.print("Select");
+                return pattern.get("start").get(0) + " -> " + pattern.get("end").get(0);
+            }
+        });
+
+        result.print();
+
+//        stream.print();
         env.execute();
     }
 
