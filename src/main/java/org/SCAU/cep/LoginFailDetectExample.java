@@ -126,7 +126,6 @@ public class LoginFailDetectExample {
                         }
                 })
                 .print("warning");
-
         env.execute();
     }
 }

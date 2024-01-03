@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/SerializerDeserializer/socialStockSerializerDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPKafkaClassic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPnoStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/test/ClassicTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/model/socialMediaStocks2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPTestEasy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPTestEasy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" afterDir="false" />
@@ -40,12 +45,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CEPKafkaClassic (1).executor": "Run",
+    "Application.CEPKafkaClassic (2).executor": "Run",
+    "Application.CEPKafkaClassic.executor": "Run",
     "Application.CEPTestEasy (1).executor": "Run",
     "Application.CEPTestEasy (2).executor": "Run",
     "Application.CEPTestEasy (3).executor": "Run",
     "Application.CEPTestEasy (4).executor": "Run",
     "Application.CEPTestEasy (5).executor": "Run",
     "Application.CEPTestEasy.executor": "Run",
+    "Application.CEPnoStream (1).executor": "Run",
+    "Application.CEPnoStream (2).executor": "Run",
+    "Application.CEPnoStream (3).executor": "Run",
+    "Application.CEPnoStream (4).executor": "Run",
+    "Application.CEPnoStream.executor": "Run",
+    "Application.ClassicTest.executor": "Run",
     "Application.DataGeneratorDemo.executor": "Run",
     "Application.KafkaConsumerProgram (1).executor": "Run",
     "Application.KafkaConsumerProgram (2).executor": "Run",
@@ -92,9 +106,9 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.LoginFailDetectExample (2)">
-    <configuration name="LoginFailDetectExample (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
+  <component name="RunManager" selected="Application.CEPKafkaClassic">
+    <configuration name="CEPKafkaClassic (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPKafkaClassic" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -106,8 +120,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginFailDetectExample (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
+    <configuration name="CEPKafkaClassic (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPKafkaClassic" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -119,8 +133,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginFailDetectExample (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
+    <configuration name="CEPKafkaClassic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPKafkaClassic" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -132,8 +146,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginFailDetectExample (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
+    <configuration name="CEPTestEasy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPTestEasy" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -145,12 +159,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginFailDetectExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.LoginFailDetectExample" />
+    <configuration name="ClassicTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.test.ClassicTest" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.cep.*" />
+          <option name="PATTERN" value="org.SCAU.cep.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,19 +173,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.LoginFailDetectExample (1)" />
-      <item itemvalue="Application.LoginFailDetectExample (2)" />
-      <item itemvalue="Application.LoginFailDetectExample (4)" />
-      <item itemvalue="Application.LoginFailDetectExample (5)" />
-      <item itemvalue="Application.LoginFailDetectExample" />
+      <item itemvalue="Application.CEPKafkaClassic" />
+      <item itemvalue="Application.CEPKafkaClassic (1)" />
+      <item itemvalue="Application.CEPKafkaClassic (2)" />
+      <item itemvalue="Application.ClassicTest" />
+      <item itemvalue="Application.CEPTestEasy" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginFailDetectExample (2)" />
-        <item itemvalue="Application.LoginFailDetectExample (5)" />
-        <item itemvalue="Application.LoginFailDetectExample (1)" />
-        <item itemvalue="Application.LoginFailDetectExample" />
-        <item itemvalue="Application.LoginFailDetectExample (4)" />
+        <item itemvalue="Application.CEPKafkaClassic" />
+        <item itemvalue="Application.CEPKafkaClassic (2)" />
+        <item itemvalue="Application.CEPKafkaClassic (1)" />
+        <item itemvalue="Application.ClassicTest" />
+        <item itemvalue="Application.CEPTestEasy" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +214,8 @@
       <workItem from="1704091194194" duration="598000" />
       <workItem from="1704097473380" duration="664000" />
       <workItem from="1704104991697" duration="114000" />
-      <workItem from="1704105123986" duration="7140000" />
+      <workItem from="1704105123986" duration="15260000" />
+      <workItem from="1704173948562" duration="26106000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -210,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703406912499</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1">
+      <option name="closed" value="true" />
+      <created>1704114116899</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704114116900</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
