@@ -1,0 +1,10 @@
+{
+  "name": "rule1",
+  "pattern": {
+    "quantifier": "+",
+    "conditions": [
+      {"type": "A"},
+      {"type": "B", "attr": ">10"}
+    ]
+  }
+}

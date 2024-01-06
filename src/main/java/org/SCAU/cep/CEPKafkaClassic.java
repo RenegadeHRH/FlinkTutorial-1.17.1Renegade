@@ -17,7 +17,10 @@ import java.util.Properties;
 public class CEPKafkaClassic {
 
     public static void main(String[] args) {
+
+        //流数据环境
         StreamExecutionEnvironment streamEnv = StreamExecutionEnvironment.getExecutionEnvironment();
+        //kafka消费者参数
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "192.168.199.165:5092");
         properties.setProperty("group.id", "test");
