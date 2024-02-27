@@ -1,7 +1,10 @@
 package org.SCAU.model;
+import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+//@JsonPropertyOrder({"date","symbol","adjClose","close","high","low","open","volume"})
 public class socialMediaStocks {
     public Date date;
     public String symbol;

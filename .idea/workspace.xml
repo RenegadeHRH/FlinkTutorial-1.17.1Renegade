@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="CEPkafkaClassic可用，正常序列化与反序列化&#10;更正内容：&#10;序列化与反序列化要求json字段与类的构造函数字段一致">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/POJOs/PatternPOJO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/PatternInput/input.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/dynamicPattern.java" afterDir="false" />
+    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="TODO:&#10;DynamicCEP">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/Singles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPBenchmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/iCndtCEP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/checkPoint/checkPointListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/checkPoint/checkPointTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/exampleFromZhiHu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/fileSinkNoWaterMark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/fileSinkTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/kafkaFileSinkTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSource/FileSourceRecordStreamingJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPKafkaClassic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPKafkaClassic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/model/socialMediaStocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/model/socialMediaStocks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,56 +49,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CEPKafkaClassic (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPKafkaClassic (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPKafkaClassic.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPTestEasy (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPTestEasy (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPTestEasy (3).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPTestEasy (4).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPTestEasy (5).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPTestEasy.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPnoStream (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPnoStream (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPnoStream (3).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPnoStream (4).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CEPnoStream.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ClassicTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DataGeneratorDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.KafkaConsumerProgram (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.KafkaConsumerProgram (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.KafkaConsumerProgram.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginFailDetectExample (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginFailDetectExample (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginFailDetectExample (3).executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginFailDetectExample (4).executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginFailDetectExample (5).executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginFailDetectExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoginFailDetectProExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.OrderTimeoutDetectExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.kafkaSource.executor&quot;: &quot;Run&quot;,
-    &quot;Application.kafkaTest1.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FlinkTutorial-1.17.1Renegade [clean...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FlinkTutorial-1.17.1Renegade [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FlinkTutorial-1.17.1Renegade [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FlinkTutorial-1.17.1Renegade [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FlinkTutorial-1.17.1Renegade [mvn,clean...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FlinkTutorial-1.17.1Renegade [mvn,clean].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CEPBenchmark.executor": "Run",
+    "Application.CEPDemo.executor": "Run",
+    "Application.CEPKafkaClassic (1).executor": "Run",
+    "Application.CEPKafkaClassic (2).executor": "Run",
+    "Application.CEPKafkaClassic.executor": "Run",
+    "Application.CEPTestEasy (1).executor": "Run",
+    "Application.CEPTestEasy (2).executor": "Run",
+    "Application.CEPTestEasy (3).executor": "Run",
+    "Application.CEPTestEasy (4).executor": "Run",
+    "Application.CEPTestEasy (5).executor": "Run",
+    "Application.CEPTestEasy.executor": "Run",
+    "Application.CEPnoStream (1).executor": "Run",
+    "Application.CEPnoStream (2).executor": "Run",
+    "Application.CEPnoStream (3).executor": "Run",
+    "Application.CEPnoStream (4).executor": "Run",
+    "Application.CEPnoStream.executor": "Run",
+    "Application.ClassicTest.executor": "Run",
+    "Application.DataGeneratorDemo.executor": "Run",
+    "Application.FileSourceRecordStreamingJob.executor": "Run",
+    "Application.KafkaConsumerProgram (1).executor": "Run",
+    "Application.KafkaConsumerProgram (2).executor": "Run",
+    "Application.KafkaConsumerProgram.executor": "Run",
+    "Application.LoginFailDetectExample (1).executor": "Run",
+    "Application.LoginFailDetectExample (2).executor": "Run",
+    "Application.LoginFailDetectExample (3).executor": "Run",
+    "Application.LoginFailDetectExample (4).executor": "Run",
+    "Application.LoginFailDetectExample (5).executor": "Run",
+    "Application.LoginFailDetectExample.executor": "Run",
+    "Application.LoginFailDetectProExample.executor": "Run",
+    "Application.OrderTimeoutDetectExample.executor": "Run",
+    "Application.exampleFromZhiHu.executor": "Run",
+    "Application.fileSinkNoWaterMark (1).executor": "Run",
+    "Application.fileSinkNoWaterMark.executor": "Run",
+    "Application.fileSinkTest.executor": "Run",
+    "Application.iCndtCEP (1).executor": "Run",
+    "Application.iCndtCEP (2).executor": "Run",
+    "Application.iCndtCEP (3).executor": "Run",
+    "Application.iCndtCEP.executor": "Run",
+    "Application.inputTest.executor": "Run",
+    "Application.kafkaFileSinkTest.executor": "Run",
+    "Application.kafkaSource.executor": "Run",
+    "Application.kafkaTest1.executor": "Run",
+    "Maven.FlinkTutorial-1.17.1Renegade [clean...].executor": "Run",
+    "Maven.FlinkTutorial-1.17.1Renegade [clean].executor": "Run",
+    "Maven.FlinkTutorial-1.17.1Renegade [compile].executor": "Run",
+    "Maven.FlinkTutorial-1.17.1Renegade [install].executor": "Run",
+    "Maven.FlinkTutorial-1.17.1Renegade [mvn,clean...].executor": "Run",
+    "Maven.FlinkTutorial-1.17.1Renegade [mvn,clean].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn mvn clean install -U" />
@@ -105,9 +125,48 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.CEPKafkaClassic">
-    <configuration name="CEPKafkaClassic (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPKafkaClassic" />
+  <component name="RunManager" selected="Application.FileSourceBulkStreamingJob">
+    <configuration name="FileSourceBulkStreamingJob" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSource.FileSourceBulkStreamingJob" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.fileSource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileSourceRecordStreamingJob" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSource.FileSourceRecordStreamingJob" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.fileSource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fileSinkNoWaterMark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSink.fileSinkNoWaterMark" />
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.fileSource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="iCndtCEP (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.iCndtCEP" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -119,51 +178,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CEPKafkaClassic (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPKafkaClassic" />
+    <configuration name="inputTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSink.inputTest" />
       <module name="FlinkTutorial-1.17.1Renegade" />
+      <option name="PROGRAM_PARAMETERS" value="--add-exports javafx.graphics/com.sun.javafx.geom=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.text=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.scene.text=ALL-UNNAMED --add-opens javafx.graphics/javafx.scene.text=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.text=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.application=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.cep.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CEPKafkaClassic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPKafkaClassic" />
-      <module name="FlinkTutorial-1.17.1Renegade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.SCAU.cep.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CEPTestEasy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.CEPTestEasy" />
-      <module name="FlinkTutorial-1.17.1Renegade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.SCAU.cep.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClassicTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.test.ClassicTest" />
-      <module name="FlinkTutorial-1.17.1Renegade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.SCAU.cep.test.*" />
+          <option name="PATTERN" value="org.SCAU.fileSource.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,19 +193,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CEPKafkaClassic" />
-      <item itemvalue="Application.CEPKafkaClassic (1)" />
-      <item itemvalue="Application.CEPKafkaClassic (2)" />
-      <item itemvalue="Application.ClassicTest" />
-      <item itemvalue="Application.CEPTestEasy" />
+      <item itemvalue="Application.FileSourceBulkStreamingJob" />
+      <item itemvalue="Application.FileSourceRecordStreamingJob" />
+      <item itemvalue="Application.fileSinkNoWaterMark" />
+      <item itemvalue="Application.iCndtCEP (3)" />
+      <item itemvalue="Application.inputTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CEPKafkaClassic" />
-        <item itemvalue="Application.CEPKafkaClassic (2)" />
-        <item itemvalue="Application.CEPKafkaClassic (1)" />
-        <item itemvalue="Application.ClassicTest" />
-        <item itemvalue="Application.CEPTestEasy" />
+        <item itemvalue="Application.FileSourceBulkStreamingJob" />
+        <item itemvalue="Application.FileSourceRecordStreamingJob" />
+        <item itemvalue="Application.inputTest" />
+        <item itemvalue="Application.fileSinkNoWaterMark" />
+        <item itemvalue="Application.iCndtCEP (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +236,11 @@
       <workItem from="1704104991697" duration="114000" />
       <workItem from="1704105123986" duration="15260000" />
       <workItem from="1704173948562" duration="33506000" />
-      <workItem from="1704373418232" duration="4964000" />
+      <workItem from="1704373418232" duration="11434000" />
+      <workItem from="1705370223545" duration="560000" />
+      <workItem from="1705497139211" duration="16529000" />
+      <workItem from="1707315539949" duration="8407000" />
+      <workItem from="1707906165690" duration="60088000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -241,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704290293584</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="TODO:&#10;DynamicCEP">
+      <option name="closed" value="true" />
+      <created>1704522327706</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704522327706</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +283,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="CEPkafkaClassic可用，正常序列化与反序列化&#10;更正内容：&#10;序列化与反序列化要求json字段与类的构造函数字段一致" />
-    <option name="LAST_COMMIT_MESSAGE" value="CEPkafkaClassic可用，正常序列化与反序列化&#10;更正内容：&#10;序列化与反序列化要求json字段与类的构造函数字段一致" />
+    <MESSAGE value="TODO:&#10;DynamicCEP" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO:&#10;DynamicCEP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

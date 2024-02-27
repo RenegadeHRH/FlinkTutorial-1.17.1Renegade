@@ -1,17 +1,44 @@
 package org.SCAU.DynamicCEP;
 
 import org.SCAU.DynamicCEP.POJOs.PatternPOJO;
+import org.SCAU.DynamicCEP.Patterns.Singles;
+import org.SCAU.SerializerDeserializer.socialStockSerializerDeserializer;
 import org.SCAU.model.socialMediaStocks2;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.commons.io.FileUtils;
+import org.apache.flink.api.common.ExecutionConfig;
+import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
+import org.apache.flink.api.common.eventtime.WatermarkStrategy;
+import org.apache.flink.api.common.serialization.SimpleStringEncoder;
+import org.apache.flink.api.common.typeinfo.Types;
+import org.apache.flink.cep.CEP;
 import org.apache.flink.cep.PatternStream;
 import org.apache.flink.cep.pattern.Pattern;
+import org.apache.flink.cep.pattern.conditions.SimpleCondition;
+import org.apache.flink.configuration.MemorySize;
+import org.apache.flink.connector.file.sink.FileSink;
+import org.apache.flink.core.fs.Path;
+import org.apache.flink.core.io.SimpleVersionedSerializer;
+import org.apache.flink.streaming.api.CheckpointingMode;
+import org.apache.flink.streaming.api.datastream.DataStream;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.sink.filesystem.BucketAssigner;
+import org.apache.flink.streaming.api.functions.sink.filesystem.OutputFileConfig;
+import org.apache.flink.streaming.api.functions.sink.filesystem.StreamingFileSink;
+import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.BasePathBucketAssigner;
+import org.apache.flink.streaming.api.functions.sink.filesystem.bucketassigners.SimpleVersionedStringSerializer;
+import org.apache.flink.streaming.api.functions.sink.filesystem.rollingpolicies.DefaultRollingPolicy;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+import org.apache.flink.util.InstantiationUtil;
 
 import javax.jms.*;
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 //---测试数据---
@@ -20,52 +47,91 @@ import java.util.stream.Stream;
 //-------------
 //
 public class CEPDemo {
-    public class CEPRuleParser {
 
-        // 从外部源加载CEP规则JSON
-//        public String loadCEPRulesFromExternal() throws  IOException {
+//    public static class SingleFileBucketAssigner implements BucketAssigner<String, String> {
 //
-//            File file = new File("rules.json");
-//
-//            return FileUtils.readFileToString(file, "UTF-8");
-//
+//        @Override
+//        public String getBucketId(String element, Context context) {
+//            return "single-file";
 //        }
 //
-//        // 解析JSON规则
-//        public List<PatternPOJO.RuleConfig> parseCEPRules(String json) {
-//            // 使用Jackson等进行JSON解析
-//            return rules;
+//        @Override
+//        public SimpleVersionedSerializer<String> getSerializer() {
+//            return InstantiationUtil.instantiate(SimpleVersionedStringSerializer.class);
 //        }
-//
-//        // 构建Pattern Stream
-//        public PatternStream<socialMediaStocks2> buildPatternStream(Stream<socialMediaStocks2> input, List<PatternPOJO.RuleConfig> rules) {
-//
-//            List<Pattern<socialMediaStocks2, ?>> patterns = new ArrayList<>();
-//
-//            for (PatternPOJO.RuleConfig rule : rules) {
-//
-//                Pattern<socialMediaStocks2, ?> pattern = Pattern.<socialMediaStocks2>begin("start");
-//
-//                for (PatternPOJO.Condition c : rule.getPattern().getConditions()) {
-//                    if (c.getType().equals("A")) {
-//                        pattern.next(new TypeFilter[A.class]);
-//                    } else if{
-//                        //...
-//                    }
-//                }
-//
-//                pattern.within(rule.getPattern().getQuantifier());
-//
-//                patterns.add(pattern);
-//            }
-//
-//            return CEP.pattern(input, patterns);
-//
-//        }
-
-    }
+//    }
 
     public static void main(String[] args) {
+//流数据环境
+        StreamExecutionEnvironment streamEnv = StreamExecutionEnvironment.getExecutionEnvironment();
+        final ExecutionConfig config = streamEnv.getConfig();
+//        config.setAutoWatermarkInterval(1000L);
+        config.enableObjectReuse();
 
+//        设置CheckPoint，让文件sink完整输出
+
+        streamEnv.enableCheckpointing(20000L, CheckpointingMode.EXACTLY_ONCE);
+        streamEnv.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
+        streamEnv.getCheckpointConfig().setMinPauseBetweenCheckpoints(20000L);
+        streamEnv.getCheckpointConfig().setCheckpointTimeout(120000L);
+        streamEnv.setParallelism(1);
+        streamEnv.disableOperatorChaining();
+
+        //kafka消费者参数
+        Properties properties = new Properties();
+        properties.setProperty("bootstrap.servers", "192.168.199.165:5092");
+        properties.setProperty("group.id", "test");
+        String intTopic = "test";
+        FlinkKafkaConsumer consumer = new FlinkKafkaConsumer<socialMediaStocks2>(
+                intTopic, new socialStockSerializerDeserializer(), properties
+        );
+        consumer.setStartFromLatest();
+        DataStream<socialMediaStocks2> input = streamEnv.addSource(consumer);
+//        使用组合pattern
+        Pattern<socialMediaStocks2,?> pattern = new Singles().getcompoundPattern();
+        DataStream<String> result = CEP.pattern(input, pattern)
+                .inProcessingTime()
+                .flatSelect(
+                        (p, o) -> {
+                            StringBuilder builder = new StringBuilder();
+                            builder.append("\n");
+                            builder.append(p.get("start").get(0))
+                                    .append(",\n")
+                                    .append(p.get("second").get(0))
+                                    .append(",\n");
+
+                            o.collect(builder.toString());
+                        },
+                        Types.STRING);
+
+//        StreamingFileSink<String> sink = StreamingFileSink
+//                .forRowFormat(new Path("output/"), new SimpleStringEncoder<String>("UTF-8"))
+//                .withRollingPolicy(DefaultRollingPolicy.builder()
+//                        .withRolloverInterval(TimeUnit.MINUTES.toMillis(15))
+//                        .withInactivityInterval(TimeUnit.MINUTES.toMillis(5))
+//                        .withMaxPartSize(1024 * 1024 * 1024)
+//                        .build())
+//                .build();
+
+        FileSink<String> sink2=FileSink
+                .forRowFormat(new Path("output/"), new SimpleStringEncoder<String>("UTF-8"))
+                .withRollingPolicy(DefaultRollingPolicy.builder()
+                        .withRolloverInterval(Duration.ofMinutes(1))
+                        .withInactivityInterval(Duration.ofMinutes(1))
+                        .withMaxPartSize(MemorySize.ofMebiBytes(1))
+                        .build())
+                .withOutputFileConfig(new OutputFileConfig("stream1",""))
+                .build();
+        result.sinkTo(sink2).uid("CEPDeomo");
+//        String streamName = "1"; // 从流中获取实际的名称
+//        String newFileName = "output_" + streamName + ".txt"; // 根据需要自定义文件名格式
+//        result.addSink(sink).name(newFileName);
+        result.print();
+
+        try {
+            streamEnv.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
