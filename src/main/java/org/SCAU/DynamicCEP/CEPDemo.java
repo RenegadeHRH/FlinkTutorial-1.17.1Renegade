@@ -48,35 +48,20 @@ import java.util.stream.Stream;
 //
 public class CEPDemo {
 
-//    public static class SingleFileBucketAssigner implements BucketAssigner<String, String> {
-//
-//        @Override
-//        public String getBucketId(String element, Context context) {
-//            return "single-file";
-//        }
-//
-//        @Override
-//        public SimpleVersionedSerializer<String> getSerializer() {
-//            return InstantiationUtil.instantiate(SimpleVersionedStringSerializer.class);
-//        }
-//    }
+
 
     public static void main(String[] args) {
 //流数据环境
         StreamExecutionEnvironment streamEnv = StreamExecutionEnvironment.getExecutionEnvironment();
         final ExecutionConfig config = streamEnv.getConfig();
-//        config.setAutoWatermarkInterval(1000L);
         config.enableObjectReuse();
-
 //        设置CheckPoint，让文件sink完整输出
-
         streamEnv.enableCheckpointing(20000L, CheckpointingMode.EXACTLY_ONCE);
         streamEnv.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
         streamEnv.getCheckpointConfig().setMinPauseBetweenCheckpoints(20000L);
         streamEnv.getCheckpointConfig().setCheckpointTimeout(120000L);
         streamEnv.setParallelism(1);
         streamEnv.disableOperatorChaining();
-
         //kafka消费者参数
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "192.168.199.165:5092");

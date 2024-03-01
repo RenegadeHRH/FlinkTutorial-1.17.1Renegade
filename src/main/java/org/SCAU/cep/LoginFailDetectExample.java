@@ -1,5 +1,6 @@
 package org.SCAU.cep;
 
+import org.SCAU.DynamicCEP.Patterns.patternsForLoginEvent;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.RuntimeContext;
@@ -7,6 +8,7 @@ import org.apache.flink.cep.CEP;
 import org.apache.flink.cep.PatternSelectFunction;
 import org.apache.flink.cep.PatternStream;
 import org.apache.flink.cep.RichPatternSelectFunction;
+import org.apache.flink.cep.pattern.GroupPattern;
 import org.apache.flink.cep.pattern.Pattern;
 import org.apache.flink.cep.pattern.conditions.SimpleCondition;
 import org.apache.flink.configuration.Configuration;
@@ -85,9 +87,9 @@ public class LoginFailDetectExample {
                         return loginEvent.eventType.equals("fail");
                     }
                 });
-
+        Pattern<LoginEvent ,?> cp = new patternsForLoginEvent().getCompoundPattern();
         // 3. 将Pattern应用到流上，检测匹配的复杂事件，得到一个PatternStream
-        PatternStream<LoginEvent> patternStream = CEP.pattern(stream, pattern);
+        PatternStream<LoginEvent> patternStream = CEP.pattern(stream, cp);
 
         // 4. 将匹配到的复杂事件选择出来，然后包装成字符串报警信息输出
         patternStream

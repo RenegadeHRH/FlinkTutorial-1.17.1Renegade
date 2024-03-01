@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="TODO:&#10;DynamicCEP">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/Singles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/CEPBenchmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/iCndtCEP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/checkPoint/checkPointListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/checkPoint/checkPointTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/exampleFromZhiHu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/fileSinkNoWaterMark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/fileSinkTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSink/kafkaFileSinkTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/fileSource/FileSourceRecordStreamingJob.java" afterDir="false" />
+    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/classParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/patternsForLoginEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/singles2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/dataSource/parseJsonFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/test/file_elements_stream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/model/stockSerializable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/reflection/reflectionTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Parser/classParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/model/socialMediaStocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/model/socialMediaStocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -53,6 +53,12 @@
   "keyToString": {
     "Application.CEPBenchmark.executor": "Run",
     "Application.CEPDemo.executor": "Run",
+    "Application.CEPDemo2 (1).executor": "Run",
+    "Application.CEPDemo2 (2).executor": "Run",
+    "Application.CEPDemo2 (3).executor": "Run",
+    "Application.CEPDemo2 (4).executor": "Run",
+    "Application.CEPDemo2 (5).executor": "Run",
+    "Application.CEPDemo2.executor": "Run",
     "Application.CEPKafkaClassic (1).executor": "Run",
     "Application.CEPKafkaClassic (2).executor": "Run",
     "Application.CEPKafkaClassic.executor": "Run",
@@ -69,6 +75,7 @@
     "Application.CEPnoStream.executor": "Run",
     "Application.ClassicTest.executor": "Run",
     "Application.DataGeneratorDemo.executor": "Run",
+    "Application.FileSourceBulkStreamingJob.executor": "Run",
     "Application.FileSourceRecordStreamingJob.executor": "Run",
     "Application.KafkaConsumerProgram (1).executor": "Run",
     "Application.KafkaConsumerProgram (2).executor": "Run",
@@ -85,6 +92,7 @@
     "Application.fileSinkNoWaterMark (1).executor": "Run",
     "Application.fileSinkNoWaterMark.executor": "Run",
     "Application.fileSinkTest.executor": "Run",
+    "Application.file_elements_stream.executor": "Run",
     "Application.iCndtCEP (1).executor": "Run",
     "Application.iCndtCEP (2).executor": "Run",
     "Application.iCndtCEP (3).executor": "Run",
@@ -93,6 +101,13 @@
     "Application.kafkaFileSinkTest.executor": "Run",
     "Application.kafkaSource.executor": "Run",
     "Application.kafkaTest1.executor": "Run",
+    "Application.reflectionTest1.executor": "Run",
+    "JUnit.classParserTest.executor": "Run",
+    "JUnit.classParserTest.testExcuteMethod.executor": "Run",
+    "JUnit.classParserTest.testGetDeclaredMethodsName.executor": "Run",
+    "JUnit.classParserTest.testGetMethod.executor": "Run",
+    "JUnit.classParserTest.testGetMethods.executor": "Run",
+    "JUnit.classParserTest.testTestGetMethod.executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [clean...].executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [clean].executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [compile].executor": "Run",
@@ -101,6 +116,8 @@
     "Maven.FlinkTutorial-1.17.1Renegade [mvn,clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -108,10 +125,18 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "http.proxy",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.SCAU.DynamicCEP.Parser" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn mvn clean install -U" />
@@ -125,87 +150,100 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.FileSourceBulkStreamingJob">
-    <configuration name="FileSourceBulkStreamingJob" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSource.FileSourceBulkStreamingJob" />
+  <component name="RunManager" selected="JUnit.classParserTest.testExcuteMethod">
+    <configuration name="classParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.fileSource.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileSourceRecordStreamingJob" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSource.FileSourceRecordStreamingJob" />
+    <configuration name="classParserTest.testExcuteMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.fileSource.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
+      <option name="METHOD_NAME" value="testExcuteMethod" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="fileSinkNoWaterMark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSink.fileSinkNoWaterMark" />
+    <configuration name="classParserTest.testGetDeclaredMethodsName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.fileSource.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
+      <option name="METHOD_NAME" value="testGetDeclaredMethodsName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="iCndtCEP (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.cep.iCndtCEP" />
+    <configuration name="classParserTest.testGetMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.cep.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
+      <option name="METHOD_NAME" value="testGetMethod" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="inputTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.fileSink.inputTest" />
+    <configuration name="classParserTest.testTestGetMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
-      <option name="PROGRAM_PARAMETERS" value="--add-exports javafx.graphics/com.sun.javafx.geom=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.text=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.scene.text=ALL-UNNAMED --add-opens javafx.graphics/javafx.scene.text=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.text=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.application=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.fileSource.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
+      <option name="METHOD_NAME" value="testTestGetMethod" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FileSourceBulkStreamingJob" />
-      <item itemvalue="Application.FileSourceRecordStreamingJob" />
-      <item itemvalue="Application.fileSinkNoWaterMark" />
-      <item itemvalue="Application.iCndtCEP (3)" />
-      <item itemvalue="Application.inputTest" />
+      <item itemvalue="JUnit.classParserTest" />
+      <item itemvalue="JUnit.classParserTest.testExcuteMethod" />
+      <item itemvalue="JUnit.classParserTest.testGetDeclaredMethodsName" />
+      <item itemvalue="JUnit.classParserTest.testGetMethod" />
+      <item itemvalue="JUnit.classParserTest.testTestGetMethod" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FileSourceBulkStreamingJob" />
-        <item itemvalue="Application.FileSourceRecordStreamingJob" />
-        <item itemvalue="Application.inputTest" />
-        <item itemvalue="Application.fileSinkNoWaterMark" />
-        <item itemvalue="Application.iCndtCEP (3)" />
+        <item itemvalue="JUnit.classParserTest.testExcuteMethod" />
+        <item itemvalue="JUnit.classParserTest.testTestGetMethod" />
+        <item itemvalue="JUnit.classParserTest.testGetMethod" />
+        <item itemvalue="JUnit.classParserTest" />
+        <item itemvalue="JUnit.classParserTest.testGetDeclaredMethodsName" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +278,7 @@
       <workItem from="1705370223545" duration="560000" />
       <workItem from="1705497139211" duration="16529000" />
       <workItem from="1707315539949" duration="8407000" />
-      <workItem from="1707906165690" duration="60088000" />
+      <workItem from="1707906165690" duration="89283000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -274,17 +312,33 @@
       <option name="project" value="LOCAL" />
       <updated>1704522327706</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1">
+      <option name="closed" value="true" />
+      <created>1709027120839</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709027120839</updated>
+    </task>
+    <task id="LOCAL-00006" summary="1">
+      <option name="closed" value="true" />
+      <created>1709027139733</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709027139733</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1" />
     <MESSAGE value="CEPkafkaClassic可用，正常序列化与反序列化&#10;更正内容：&#10;序列化与反序列化要求json字段与类的构造函数字段一致" />
     <MESSAGE value="TODO:&#10;DynamicCEP" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO:&#10;DynamicCEP" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -295,5 +349,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="patternFlatSelectFunction" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
