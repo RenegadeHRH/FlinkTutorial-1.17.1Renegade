@@ -68,19 +68,19 @@ public class conditionParserTest extends TestCase {
     public void testString2Expression() throws Exception {
         String expression = "1>2";
 
-        org.SCAU.DynamicCEP.Parser.conditionParser.BinaryExpression BE =cp.string2Expression(expression);
+        org.SCAU.DynamicCEP.POJOs.simpleCondition.BinaryExpression BE =cp.string2Expression(expression);
         System.out.println(BE.toString());
         String expression2 = "1=2";
-        org.SCAU.DynamicCEP.Parser.conditionParser.BinaryExpression BE2 =cp.string2Expression(expression2);
+        org.SCAU.DynamicCEP.POJOs.simpleCondition.BinaryExpression BE2 =cp.string2Expression(expression2);
         System.out.println(BE2.toString());
         String expression3 = "1>=2";
-        org.SCAU.DynamicCEP.Parser.conditionParser.BinaryExpression BE3 =cp.string2Expression(expression3);
+        org.SCAU.DynamicCEP.POJOs.simpleCondition.BinaryExpression BE3 =cp.string2Expression(expression3);
         System.out.println(BE3.toString());
         String expression4 = "1<=2";
-        org.SCAU.DynamicCEP.Parser.conditionParser.BinaryExpression BE4 =cp.string2Expression(expression4);
+        org.SCAU.DynamicCEP.POJOs.simpleCondition.BinaryExpression BE4 =cp.string2Expression(expression4);
         System.out.println(BE4.toString());
         String expression5 = "awdagas2233!=awd5e4qw5e12";
-        org.SCAU.DynamicCEP.Parser.conditionParser.BinaryExpression BE5 =cp.string2Expression(expression5);
+        org.SCAU.DynamicCEP.POJOs.simpleCondition.BinaryExpression BE5 =cp.string2Expression(expression5);
         System.out.println(BE5.toString());
         List<String> test = new ArrayList<>();
         test.add("awdagas2233!=awd5e4qw5e12");
