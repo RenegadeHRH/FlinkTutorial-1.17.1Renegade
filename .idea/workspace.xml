@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/classParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/patternsForLoginEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/singles2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/dataSource/parseJsonFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/test/file_elements_stream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/model/stockSerializable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/reflection/reflectionTest1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Parser/classParserTest.java" afterDir="false" />
+    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="`输入流更改为json；CEP匹配成功；详见CEPDemo2、singles2、stockSerializable&#10;`更新ClassParser">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/conditionParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Parser/conditionParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/cep/LoginFailDetectExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/classParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/classParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -108,6 +99,11 @@
     "JUnit.classParserTest.testGetMethod.executor": "Run",
     "JUnit.classParserTest.testGetMethods.executor": "Run",
     "JUnit.classParserTest.testTestGetMethod.executor": "Run",
+    "JUnit.conditionParserTest.testBinaryLogicOperation.executor": "Run",
+    "JUnit.conditionParserTest.testCalculate.executor": "Run",
+    "JUnit.conditionParserTest.testIsNumeric.executor": "Run",
+    "JUnit.conditionParserTest.testParse.executor": "Run",
+    "JUnit.conditionParserTest.testString2Expression.executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [clean...].executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [clean].executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [compile].executor": "Run",
@@ -150,8 +146,8 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.classParserTest.testExcuteMethod">
-    <configuration name="classParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.conditionParserTest.testCalculate">
+    <configuration name="conditionParserTest.testBinaryLogicOperation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -160,29 +156,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="classParserTest.testExcuteMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FlinkTutorial-1.17.1Renegade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
-      <option name="METHOD_NAME" value="testExcuteMethod" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
+      <option name="METHOD_NAME" value="testBinaryLogicOperation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="classParserTest.testGetDeclaredMethodsName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="conditionParserTest.testCalculate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -191,14 +172,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
-      <option name="METHOD_NAME" value="testGetDeclaredMethodsName" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
+      <option name="METHOD_NAME" value="testCalculate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="classParserTest.testGetMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="conditionParserTest.testIsNumeric" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -207,14 +188,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
-      <option name="METHOD_NAME" value="testGetMethod" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
+      <option name="METHOD_NAME" value="testIsNumeric" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="classParserTest.testTestGetMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="conditionParserTest.testParse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -223,27 +204,43 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.classParserTest" />
-      <option name="METHOD_NAME" value="testTestGetMethod" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
+      <option name="METHOD_NAME" value="testParse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="conditionParserTest.testString2Expression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
+      <option name="METHOD_NAME" value="testString2Expression" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.classParserTest" />
-      <item itemvalue="JUnit.classParserTest.testExcuteMethod" />
-      <item itemvalue="JUnit.classParserTest.testGetDeclaredMethodsName" />
-      <item itemvalue="JUnit.classParserTest.testGetMethod" />
-      <item itemvalue="JUnit.classParserTest.testTestGetMethod" />
+      <item itemvalue="JUnit.conditionParserTest.testBinaryLogicOperation" />
+      <item itemvalue="JUnit.conditionParserTest.testCalculate" />
+      <item itemvalue="JUnit.conditionParserTest.testIsNumeric" />
+      <item itemvalue="JUnit.conditionParserTest.testParse" />
+      <item itemvalue="JUnit.conditionParserTest.testString2Expression" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.classParserTest.testExcuteMethod" />
-        <item itemvalue="JUnit.classParserTest.testTestGetMethod" />
-        <item itemvalue="JUnit.classParserTest.testGetMethod" />
-        <item itemvalue="JUnit.classParserTest" />
-        <item itemvalue="JUnit.classParserTest.testGetDeclaredMethodsName" />
+        <item itemvalue="JUnit.conditionParserTest.testCalculate" />
+        <item itemvalue="JUnit.conditionParserTest.testParse" />
+        <item itemvalue="JUnit.conditionParserTest.testString2Expression" />
+        <item itemvalue="JUnit.conditionParserTest.testBinaryLogicOperation" />
+        <item itemvalue="JUnit.conditionParserTest.testIsNumeric" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +275,7 @@
       <workItem from="1705370223545" duration="560000" />
       <workItem from="1705497139211" duration="16529000" />
       <workItem from="1707315539949" duration="8407000" />
-      <workItem from="1707906165690" duration="89283000" />
+      <workItem from="1707906165690" duration="114234000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -328,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709027139733</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="`输入流更改为json；CEP匹配成功；详见CEPDemo2、singles2、stockSerializable&#10;`更新ClassParser">
+      <option name="closed" value="true" />
+      <created>1709290727601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709290727601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +343,8 @@
     <MESSAGE value="CEPkafkaClassic可用，正常序列化与反序列化&#10;更正内容：&#10;序列化与反序列化要求json字段与类的构造函数字段一致" />
     <MESSAGE value="TODO:&#10;DynamicCEP" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="`输入流更改为json；CEP匹配成功；详见CEPDemo2、singles2、stockSerializable&#10;`更新ClassParser" />
+    <option name="LAST_COMMIT_MESSAGE" value="`输入流更改为json；CEP匹配成功；详见CEPDemo2、singles2、stockSerializable&#10;`更新ClassParser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
