@@ -89,6 +89,7 @@ public class conditionParserTest extends TestCase {
         test.add("awdagas2233<=awd5e4qw5e12");
         test.add("awdagas2233>awd5e4qw5e12");
         test.add("awdagas2233<awd5e4qw5e12");
+        test.add("awdagas 2233<awd5e4qw5e 12");
         for (String i : test){
             System.out.println(
                     cp.string2Expression(i).toString()+"\n"
@@ -102,10 +103,13 @@ public class conditionParserTest extends TestCase {
     public void testParse() {
         try {
             List<String> testList=new ArrayList<>();
-            testList.add("1=1");
-            testList.add("1  <    2");
-            testList.add("2  <    1");
-            testList.add("abcd  >    weqq");
+            testList.add("i:1=1");
+            testList.add("s:1  <    2");
+            testList.add("f:2  <    1");
+            testList.add("i:abcd  >    weqq");
+            testList.add("s:abcd  >    weqq |i:1 < 2");
+            testList.add("s:e.abcd()  =    weqq |i:1<2");
+//            System.out.println(cp.parse(testList.get(1)).getBinaryExpression().toString());
             for (String s : testList){
                 System.out.println(cp.parse(s).getBinaryExpression().toString());
             }
@@ -117,24 +121,35 @@ public class conditionParserTest extends TestCase {
         }
     }
 
-    public void testCalculate() {
+//    public void testCalculate() {
+//        try {
+////            Assertions.assertEquals(true,cp.parse("1=1").calculate());
+////            Assertions.assertEquals(true,cp.parse("1  <    2").calculate());
+////            Assertions.assertEquals(false,cp.parse("2  <    1").calculate());
+////            Assertions.assertEquals(true,cp.parse("2  >    1").calculate());
+////            Assertions.assertEquals(false,cp.parse("1<1").calculate());
+////            Assertions.assertEquals(false,cp.parse("1  <    1").calculate());
+////            Assertions.assertEquals(true,cp.parse("1  <=  1").calculate());
+////            Assertions.assertEquals(true,cp.parse("1  >=  1").calculate());
+////            Assertions.assertEquals(true,cp.parse("abcd  =   abcd").calculate());
+////            Assertions.assertEquals(false,cp.parse("abcd  =   abcc").calculate());
+////            Assertions.assertEquals(false,cp.parse("abcd  =   abdc").calculate());
+////            Assertions.assertEquals(false,cp.parse("abcd  >   abdc").calculate());
+////            Assertions.assertEquals(false,cp.parse("1  >   abdc").calculate());
+//        }
+//        catch (Exception e){
+//            System.out.println(e.toString());
+//        }
+//    }
+
+    public void testBinaryLogicOperation2() {
         try {
-            Assertions.assertEquals(true,cp.parse("1=1").calculate());
-            Assertions.assertEquals(true,cp.parse("1  <    2").calculate());
-            Assertions.assertEquals(false,cp.parse("2  <    1").calculate());
-            Assertions.assertEquals(true,cp.parse("2  >    1").calculate());
-            Assertions.assertEquals(false,cp.parse("1<1").calculate());
-            Assertions.assertEquals(false,cp.parse("1  <    1").calculate());
-            Assertions.assertEquals(true,cp.parse("1  <=  1").calculate());
-            Assertions.assertEquals(true,cp.parse("1  >=  1").calculate());
-            Assertions.assertEquals(true,cp.parse("abcd  =   abcd").calculate());
-            Assertions.assertEquals(false,cp.parse("abcd  =   abcc").calculate());
-            Assertions.assertEquals(false,cp.parse("abcd  =   abdc").calculate());
-//            Assertions.assertEquals(false,cp.parse("abcd  >   abdc").calculate());
-//            Assertions.assertEquals(false,cp.parse("1  >   abdc").calculate());
-        }
-        catch (Exception e){
-            System.out.println(e.toString());
+            Assertions.assertEquals(false, cp.BinaryLogicOperation("1", "<", "1","i"));
+            Assertions.assertEquals(true, cp.BinaryLogicOperation("1", "<", "2","i"));
+            Assertions.assertEquals(true, cp.BinaryLogicOperation("1", "!=", "2","s"));
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

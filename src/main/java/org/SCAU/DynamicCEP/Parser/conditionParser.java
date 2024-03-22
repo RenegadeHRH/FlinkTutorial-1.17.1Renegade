@@ -4,25 +4,35 @@ import org.SCAU.DynamicCEP.POJOs.simpleCondition.BinaryExpression;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class conditionParser {
-    private BinaryExpression binaryExpression;
+    private List<BinaryExpression> binaryExpressions;
 
-    public BinaryExpression getBinaryExpression() {
-        return binaryExpression;
+    public List<BinaryExpression> getBinaryExpression() {
+        return binaryExpressions;
     }
 
-    public void setBinaryExpression(BinaryExpression binaryExpression) {
-        this.binaryExpression = binaryExpression;
+    public void setBinaryExpression(List<BinaryExpression> binaryExpressions) {
+        this.binaryExpressions = binaryExpressions;
     }
 
     public conditionParser() {
-        this.binaryExpression = null;
+        this.binaryExpressions = null;
     }
+    public conditionParser(String s) {
+        this.binaryExpressions= new ArrayList<>();
+        for(String i : s.split("\\|")){
+//            System.out.println(i.trim());
+//            System.out.println(new BinaryExpression(i.trim()).toString());
+            this.binaryExpressions.add(new BinaryExpression(i.trim()));
 
+        }
+    }
     //    把不等式左右分析出来，把
     public static boolean isNumeric(Class<?> clazz) {
         return clazz == Integer.class ||
@@ -45,26 +55,8 @@ public class conditionParser {
 //        return "=,!=,>=,<=,>,<".contains(op);
     }
 
-    //        op=>,<,=,!=,>=,<=
 
-//    public boolean BinaryLogicOperation(String left,String op, String right){
-//        //        op:: =,!=
-//        if (left == null || right == null){
-//            throw new IllegalArgumentException("等式左边或者右边为空");
-//        }
-//        if (op == "!="){
-//            return !(left.equals(right));
-//        }
-//        if (op == "="){
-//            return left.equals(right);
-//        }
-//        if (op == ">=" || op == "<=" || op == ">" || op == "<"){
-//            System.out.println("String 之间不可以使用 >=,<=,>,<进行比较 ");
-//            return false;
-//        }
-//        System.out.println("非法操作符");
-//        return false;
-//    }
+
     public  <T extends Comparable<T>>
     boolean BinaryLogicOperation(T left,String op, T right) throws Exception
     {
@@ -97,7 +89,6 @@ public class conditionParser {
                 default:
                     throw new IllegalArgumentException("String 类型不支持除了=、!=以外的操作");
         }
-
         }
 //        System.out.println(isNumber);
 //        System.out.println(op);
@@ -122,26 +113,81 @@ public class conditionParser {
         }
         throw new Exception("未定义错误");
     }
-
-
+    boolean StringOperation(String left,String op, String right) {
+        switch (op) {
+            case "=":
+                return left.equals(right);
+            case "!=":
+                return !left.equals(right);
+            default:
+                throw new IllegalArgumentException("String 类型不支持除了=、!=以外的操作");
+        }
+    }
+    boolean NumOeration(String left,String op, String right) {
+        if (Objects.equals(op, "!=") || Objects.equals(op, "=")){
+            return left.equals(right);
+        }
+        if (op.equals(">=")) {
+            return left.compareTo(right)>=0;
+        }
+        if (op.equals("<=")) {
+            return left.compareTo(right)<=0;
+        }
+        if (op.equals(">")) {
+            return left.compareTo(right)>0;
+        }
+        if (op.equals("<")) {
+            return left.compareTo(right)<0;
+        }
+        return false;
+    }
+    public boolean BinaryLogicOperation(String left,String op, String right,String type) throws Exception{
+        if (type == "s"){
+            return StringOperation(left,op,right);
+        }else {
+            return NumOeration(left,op,right);
+        }
+    }
     public BinaryExpression string2Expression(String s){
         return new BinaryExpression(s);
     }
     public conditionParser parse(String expression) throws Exception{
-        BinaryExpression binaryExpression = string2Expression(expression);
-        this.setBinaryExpression(binaryExpression);
+        String[] segments = expression.split("\\|");
+
+
+        binaryExpressions = new ArrayList<>();
+
+        for (String s :segments){
+            this.binaryExpressions.add(string2Expression(s));
+        }
+
+
 
         return this;
     }
-    public boolean calculate() throws Exception {
-        if (this.getBinaryExpression()==null){
-            throw new Exception("表达式为空");
-        }
-        return this.BinaryLogicOperation(
-                this.getBinaryExpression().getLeft(),
-                this.getBinaryExpression().getOp(),
-                this.getBinaryExpression().getRight()
-        );
 
+    @Override
+    public String toString() {
+        StringBuilder expressionString= new StringBuilder();
+        for(BinaryExpression be : this.binaryExpressions){
+            expressionString.append(be.toString()).append("\n");
+        }
+        return "conditionParser{\n" +
+                expressionString+
+                '}';
     }
+//    public boolean calculate(){
+//
+//    }
+//    public boolean calculate() throws Exception {
+//        if (this.getBinaryExpression()==null){
+//            throw new Exception("表达式为空");
+//        }
+//        return this.BinaryLogicOperation(
+//                this.getBinaryExpression().getLeft(),
+//                this.getBinaryExpression().getOp(),
+//                this.getBinaryExpression().getRight()
+//        );
+
+//    }
 }

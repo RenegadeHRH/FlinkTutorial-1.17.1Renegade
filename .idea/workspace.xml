@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/POJOs/eventType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/miscParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/repeatTimesParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Register/classRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/complier/conditionComplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/complier/singlePatternComplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/POJOs/eventTypeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Parser/repeatTimesParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Parser/singlePatternParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Patterns/singles2Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Register/classRegisterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/complier/conditionComplierTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/POJOs/simpleCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/POJOs/simpleCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/conditionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/conditionParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/singlePatternParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/singlePatternParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Parser/conditionParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/Parser/conditionParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit3 Test Class" />
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -38,97 +53,111 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CEPBenchmark.executor": "Run",
-    "Application.CEPDemo.executor": "Run",
-    "Application.CEPDemo2 (1).executor": "Run",
-    "Application.CEPDemo2 (2).executor": "Run",
-    "Application.CEPDemo2 (3).executor": "Run",
-    "Application.CEPDemo2 (4).executor": "Run",
-    "Application.CEPDemo2 (5).executor": "Run",
-    "Application.CEPDemo2.executor": "Run",
-    "Application.CEPKafkaClassic (1).executor": "Run",
-    "Application.CEPKafkaClassic (2).executor": "Run",
-    "Application.CEPKafkaClassic.executor": "Run",
-    "Application.CEPTestEasy (1).executor": "Run",
-    "Application.CEPTestEasy (2).executor": "Run",
-    "Application.CEPTestEasy (3).executor": "Run",
-    "Application.CEPTestEasy (4).executor": "Run",
-    "Application.CEPTestEasy (5).executor": "Run",
-    "Application.CEPTestEasy.executor": "Run",
-    "Application.CEPnoStream (1).executor": "Run",
-    "Application.CEPnoStream (2).executor": "Run",
-    "Application.CEPnoStream (3).executor": "Run",
-    "Application.CEPnoStream (4).executor": "Run",
-    "Application.CEPnoStream.executor": "Run",
-    "Application.ClassicTest.executor": "Run",
-    "Application.DataGeneratorDemo.executor": "Run",
-    "Application.FileSourceBulkStreamingJob.executor": "Run",
-    "Application.FileSourceRecordStreamingJob.executor": "Run",
-    "Application.KafkaConsumerProgram (1).executor": "Run",
-    "Application.KafkaConsumerProgram (2).executor": "Run",
-    "Application.KafkaConsumerProgram.executor": "Run",
-    "Application.LoginFailDetectExample (1).executor": "Run",
-    "Application.LoginFailDetectExample (2).executor": "Run",
-    "Application.LoginFailDetectExample (3).executor": "Run",
-    "Application.LoginFailDetectExample (4).executor": "Run",
-    "Application.LoginFailDetectExample (5).executor": "Run",
-    "Application.LoginFailDetectExample.executor": "Run",
-    "Application.LoginFailDetectProExample.executor": "Run",
-    "Application.OrderTimeoutDetectExample.executor": "Run",
-    "Application.exampleFromZhiHu.executor": "Run",
-    "Application.fileSinkNoWaterMark (1).executor": "Run",
-    "Application.fileSinkNoWaterMark.executor": "Run",
-    "Application.fileSinkTest.executor": "Run",
-    "Application.file_elements_stream.executor": "Run",
-    "Application.iCndtCEP (1).executor": "Run",
-    "Application.iCndtCEP (2).executor": "Run",
-    "Application.iCndtCEP (3).executor": "Run",
-    "Application.iCndtCEP.executor": "Run",
-    "Application.inputTest.executor": "Run",
-    "Application.kafkaFileSinkTest.executor": "Run",
-    "Application.kafkaSource.executor": "Run",
-    "Application.kafkaTest1.executor": "Run",
-    "Application.reflectionTest1.executor": "Run",
-    "JUnit.classParserTest.executor": "Run",
-    "JUnit.classParserTest.testExcuteMethod.executor": "Run",
-    "JUnit.classParserTest.testGetDeclaredMethodsName.executor": "Run",
-    "JUnit.classParserTest.testGetMethod.executor": "Run",
-    "JUnit.classParserTest.testGetMethods.executor": "Run",
-    "JUnit.classParserTest.testTestGetMethod.executor": "Run",
-    "JUnit.conditionParserTest.testBinaryLogicOperation.executor": "Run",
-    "JUnit.conditionParserTest.testCalculate.executor": "Run",
-    "JUnit.conditionParserTest.testIsNumeric.executor": "Run",
-    "JUnit.conditionParserTest.testParse.executor": "Run",
-    "JUnit.conditionParserTest.testString2Expression.executor": "Run",
-    "Maven.FlinkTutorial-1.17.1Renegade [clean...].executor": "Run",
-    "Maven.FlinkTutorial-1.17.1Renegade [clean].executor": "Run",
-    "Maven.FlinkTutorial-1.17.1Renegade [compile].executor": "Run",
-    "Maven.FlinkTutorial-1.17.1Renegade [install].executor": "Run",
-    "Maven.FlinkTutorial-1.17.1Renegade [mvn,clean...].executor": "Run",
-    "Maven.FlinkTutorial-1.17.1Renegade [mvn,clean].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "http.proxy",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CEPBenchmark.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPDemo2 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPDemo2 (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPDemo2 (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPDemo2 (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPDemo2 (5).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPDemo2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPKafkaClassic (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPKafkaClassic (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPKafkaClassic.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPTestEasy (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPTestEasy (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPTestEasy (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPTestEasy (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPTestEasy (5).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPTestEasy.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPnoStream (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPnoStream (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPnoStream (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPnoStream (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CEPnoStream.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ClassicTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataGeneratorDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FileSourceBulkStreamingJob.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FileSourceRecordStreamingJob.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KafkaConsumerProgram (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.KafkaConsumerProgram (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.KafkaConsumerProgram.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginFailDetectExample (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginFailDetectExample (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginFailDetectExample (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginFailDetectExample (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginFailDetectExample (5).executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginFailDetectExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginFailDetectProExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderTimeoutDetectExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.exampleFromZhiHu.executor&quot;: &quot;Run&quot;,
+    &quot;Application.fileSinkNoWaterMark (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.fileSinkNoWaterMark.executor&quot;: &quot;Run&quot;,
+    &quot;Application.fileSinkTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.file_elements_stream.executor&quot;: &quot;Run&quot;,
+    &quot;Application.iCndtCEP (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.iCndtCEP (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.iCndtCEP (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.iCndtCEP.executor&quot;: &quot;Run&quot;,
+    &quot;Application.inputTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.kafkaFileSinkTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.kafkaSource.executor&quot;: &quot;Run&quot;,
+    &quot;Application.kafkaTest1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.reflectionTest1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classParserTest.testExcuteMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classParserTest.testGetDeclaredMethodsName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classParserTest.testGetMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classParserTest.testGetMethods.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classParserTest.testTestGetMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classRegisterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.classRegisterTest.testRegister.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.conditionComplierTest.testExtractMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.conditionParserTest.testBinaryLogicOperation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.conditionParserTest.testBinaryLogicOperation2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.conditionParserTest.testCalculate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.conditionParserTest.testIsNumeric.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.conditionParserTest.testParse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.conditionParserTest.testString2Expression.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.eventTypeTest.testTestToString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.repeatTimesParserTest.testCheck.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.singlePatternParserTest.testGetPatternName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.singlePatternParserTest.testParser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.singles2Test.testGetcompoundPattern.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FlinkTutorial-1.17.1Renegade [clean...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FlinkTutorial-1.17.1Renegade [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FlinkTutorial-1.17.1Renegade [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FlinkTutorial-1.17.1Renegade [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FlinkTutorial-1.17.1Renegade [mvn,clean...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FlinkTutorial-1.17.1Renegade [mvn,clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.SCAU.DynamicCEP.Parser" />
+      <recent name="org.SCAU.DynamicCEP.complier" />
+      <recent name="org.SCAU.DynamicCEP.POJOs" />
+      <recent name="org.SCAU.DynamicCEP.Patterns" />
+      <recent name="org.SCAU.DynamicCEP.Register" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -144,37 +173,24 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.CEPDemo2">
-    <configuration name="CEPDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.CEPDemo2" />
+  <component name="RunManager" selected="JUnit.singlePatternParserTest.testGetPatternName">
+    <configuration name="conditionComplierTest.testExtractMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.DynamicCEP.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.complier.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="conditionParserTest.testBinaryLogicOperation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FlinkTutorial-1.17.1Renegade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
-      <option name="METHOD_NAME" value="testBinaryLogicOperation" />
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.complier" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.complier.conditionComplierTest" />
+      <option name="METHOD_NAME" value="testExtractMethod" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="conditionParserTest.testCalculate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="conditionParserTest.testBinaryLogicOperation2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -184,7 +200,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
       <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
-      <option name="METHOD_NAME" value="testCalculate" />
+      <option name="METHOD_NAME" value="testBinaryLogicOperation2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,7 +222,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="conditionParserTest.testString2Expression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="singlePatternParserTest.testGetPatternName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
@@ -215,27 +231,43 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.conditionParserTest" />
-      <option name="METHOD_NAME" value="testString2Expression" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.singlePatternParserTest" />
+      <option name="METHOD_NAME" value="testGetPatternName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="singlePatternParserTest.testParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.Parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.Parser" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.Parser.singlePatternParserTest" />
+      <option name="METHOD_NAME" value="testParser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CEPDemo2" />
-      <item itemvalue="JUnit.conditionParserTest.testBinaryLogicOperation" />
-      <item itemvalue="JUnit.conditionParserTest.testCalculate" />
+      <item itemvalue="JUnit.singlePatternParserTest.testParser" />
+      <item itemvalue="JUnit.conditionComplierTest.testExtractMethod" />
+      <item itemvalue="JUnit.conditionParserTest.testBinaryLogicOperation2" />
       <item itemvalue="JUnit.conditionParserTest.testParse" />
-      <item itemvalue="JUnit.conditionParserTest.testString2Expression" />
+      <item itemvalue="JUnit.singlePatternParserTest.testGetPatternName" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CEPDemo2" />
-        <item itemvalue="JUnit.conditionParserTest.testString2Expression" />
-        <item itemvalue="JUnit.conditionParserTest.testCalculate" />
+        <item itemvalue="JUnit.singlePatternParserTest.testGetPatternName" />
+        <item itemvalue="JUnit.singlePatternParserTest.testParser" />
+        <item itemvalue="JUnit.conditionComplierTest.testExtractMethod" />
         <item itemvalue="JUnit.conditionParserTest.testParse" />
-        <item itemvalue="JUnit.conditionParserTest.testBinaryLogicOperation" />
+        <item itemvalue="JUnit.conditionParserTest.testBinaryLogicOperation2" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +302,13 @@
       <workItem from="1705370223545" duration="560000" />
       <workItem from="1705497139211" duration="16529000" />
       <workItem from="1707315539949" duration="8407000" />
-      <workItem from="1707906165690" duration="118366000" />
+      <workItem from="1707906165690" duration="129515000" />
+      <workItem from="1709722492857" duration="1538000" />
+      <workItem from="1709799486379" duration="1076000" />
+      <workItem from="1709990440944" duration="64813000" />
+      <workItem from="1710537654980" duration="3592000" />
+      <workItem from="1710830411393" duration="29800000" />
+      <workItem from="1711091461549" duration="2872000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -344,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709472135643</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1">
+      <option name="closed" value="true" />
+      <created>1709475713778</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1709475713778</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
