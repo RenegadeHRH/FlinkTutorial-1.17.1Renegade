@@ -1,20 +1,37 @@
 package org.SCAU.DynamicCEP.POJOs;
 
+import weka.core.pmml.jaxbbindings.True;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class simpleCondition {
     //简单条件
     public static class BinaryExpression{
-
+        private boolean isOptional;
         private String op;
         private String right;
         private String left;
+
+
         private String variableType;
+        public boolean isOptional() {
+            return isOptional;
+        }
+
+        public void setOptional(String s){
+            if (s.contains("|")){
+                this.isOptional= true;
+            }
+            else{
+                this.isOptional=false;
+            }
+        }
         public BinaryExpression(String Expression){
             //匹配：包含空格的左右元素以及中间的操作符
+            setOptional(Expression);
 
-            this.variableType=Expression.split("\\:")[0];
+            this.variableType=Expression.split("\\:")[0].replace("|","").replace("&","").trim();
             String rest = Expression.split("\\:")[1];
             this.left=rest.split("(>=|<|>|<=|=|!=)")[0];
             this.right=rest.split("(>=|<|>|<=|=|!=)")[1];
@@ -62,7 +79,7 @@ public class simpleCondition {
 
         @Override
         public String toString() {
-            return "BinaryExpression{\"" +left+" "+op+" "+right+"\" variableType:"+variableType+ "}";
+            return "BinaryExpression{\"" +left+" "+op+" "+right+"\", variableType:"+variableType+ ",isOptional:"+isOptional+ "}";
         }
     }
 }

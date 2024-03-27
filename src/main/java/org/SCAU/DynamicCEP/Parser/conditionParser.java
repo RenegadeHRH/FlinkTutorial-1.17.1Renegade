@@ -13,25 +13,44 @@ import java.util.regex.Pattern;
 public class conditionParser {
     private List<BinaryExpression> binaryExpressions;
 
-    public List<BinaryExpression> getBinaryExpression() {
+    public List<BinaryExpression> getBinaryExpressions() {
         return binaryExpressions;
     }
 
     public void setBinaryExpression(List<BinaryExpression> binaryExpressions) {
         this.binaryExpressions = binaryExpressions;
     }
+    public List<String> splitExpression(String s){
 
+        List<String> list = new ArrayList<>();
+        String tmp = "";
+        for (int i = 0; i < s.length(); i++){
+
+            if ( s.charAt(i)== '&' || s.charAt(i) =='|' ){
+
+
+                list.add(tmp.trim());
+                tmp="";
+
+            }
+            tmp+=s.charAt(i);
+        }
+        list.add(tmp);
+
+        return list;
+    }
     public conditionParser() {
         this.binaryExpressions = null;
     }
     public conditionParser(String s) {
         this.binaryExpressions= new ArrayList<>();
-        for(String i : s.split("\\|")){
-//            System.out.println(i.trim());
-//            System.out.println(new BinaryExpression(i.trim()).toString());
-            this.binaryExpressions.add(new BinaryExpression(i.trim()));
+        List<String> exps=splitExpression(s);
+        for (String str :exps){
 
+
+            this.binaryExpressions.add(new BinaryExpression(str.trim()));
         }
+
     }
     //    把不等式左右分析出来，把
     public static boolean isNumeric(Class<?> clazz) {
@@ -139,7 +158,8 @@ public class conditionParser {
             return left1>right1;
         }
         if (op.equals("<")) {
-//            System.out.println(left1+" "+right1+":"+(left1 <right1));
+
+
 
             return left1 <right1;
         }

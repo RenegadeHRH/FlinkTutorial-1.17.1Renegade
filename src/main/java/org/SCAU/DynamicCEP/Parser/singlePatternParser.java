@@ -123,6 +123,7 @@ public class singlePatternParser {
         //条件
         res= this.parseByDelimiters('[',']',res.get("rest").trim());
         this.condition=res.get("content").trim();
+//        System.out.println(this.condition);
 
         //连续性
         String rest= res.get("rest").trim();

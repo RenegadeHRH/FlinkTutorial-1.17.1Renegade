@@ -111,7 +111,7 @@ public class conditionParserTest extends TestCase {
             testList.add("s:e.abcd()  =    weqq |i:1<2");
 //            System.out.println(cp.parse(testList.get(1)).getBinaryExpression().toString());
             for (String s : testList){
-                System.out.println(cp.parse(s).getBinaryExpression().toString());
+                System.out.println(cp.parse(s).getBinaryExpressions().toString());
             }
 
 

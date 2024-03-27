@@ -1,15 +1,18 @@
 package org.SCAU.DynamicCEP.expose;
 
+import org.SCAU.DynamicCEP.POJOs.simpleCondition;
 import org.SCAU.DynamicCEP.Parser.classParser;
 import org.SCAU.DynamicCEP.Parser.conditionParser;
 import org.SCAU.DynamicCEP.Parser.endConditionParser;
 import org.SCAU.DynamicCEP.Parser.singlePatternParser;
+import org.SCAU.DynamicCEP.complier.conditionComplier;
 import org.SCAU.model.stockSerializable;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.cep.pattern.Pattern;
 import org.apache.flink.cep.pattern.conditions.SimpleCondition;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 //        Pattern<stockSerializable,stockSerializable> pattern1 = Pattern.<stockSerializable>begin("start").where(
 //                new SimpleCondition<stockSerializable>() {
 //                    @Override
@@ -73,22 +76,29 @@ public class singlePattern {
         setNameAndClass(spp.getPatternName(),spp.getEventType());
 
         //设置条件
-        conditionParser cdntP=new conditionParser(spp.getCondition());
+        conditionParser cndtP=new conditionParser(spp.getCondition());
+        List<simpleCondition.BinaryExpression> bes= cndtP.getBinaryExpressions();
 
+        for(simpleCondition.BinaryExpression be : bes){
+            new conditionComplier(be,stockSerializable.class);
+            SimpleCondition<stockSerializable> condition = conditionComplier.complie();
+            if (be.isOptional()){
+                this.pattern=this.pattern.or(
+                        condition
+                );
+            }
+            else{
+                this.pattern.where(
+                        condition
+                );
+            }
 
+        }
 
-        System.out.println(cdntP.toString());
-
-
-
-
-//
-
-
+        System.out.println(this.pattern.toString());
         //解析endcondition
         endConditionParser ecp=new endConditionParser(spp.getEndCondition());
 
-        Pattern<Object,Object> pattern1 = Pattern.<Object>begin("start");
         //singlePatternParser
         //conditionParser
 
