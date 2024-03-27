@@ -8,6 +8,10 @@ import java.util.List;
 
 public class classParser {
     private static final PrintStream out=System.out;
+
+    public classParser() {
+    }
+
     public static List getMethods(String className) {
 //        获取类的全部方法
         try {
@@ -15,6 +19,7 @@ public class classParser {
             Method[] methods = c.getMethods();
             for (Method m : methods) {
                 out.println(m.getName());
+
             }
             return Arrays.asList(methods);
         } catch (ClassNotFoundException e) {
@@ -67,6 +72,7 @@ public class classParser {
      */
     public static Method getMethod(Class<?> cls, String method) {
         for (Method m : cls.getDeclaredMethods()) {
+//            System.out.println(m.getName());
             if (m.getName().equals(method)) {
                 return m;
             }
@@ -88,6 +94,20 @@ public class classParser {
             return null;
         }
     }
-
+    public static Object getClassInstance(String name) {
+        try {
+            Class<?> c = Class.forName(name);
+            return c.newInstance();
+        } catch (ClassNotFoundException e) {
+            out.println("can not find class: " + name);
+            return null;
+        } catch (InstantiationException e) {
+            out.println("Cannot instantiate class: " + name);
+            return null;
+        } catch (IllegalAccessException e) {
+            out.println("Cannot access class: " + name);
+            return null;
+        }
+    }
 
 }

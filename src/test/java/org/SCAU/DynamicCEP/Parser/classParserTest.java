@@ -1,11 +1,8 @@
 package org.SCAU.DynamicCEP.Parser;
 
 import junit.framework.TestCase;
-import meka.core.A;
 import org.SCAU.model.stockSerializable;
-import org.apache.kafka.common.protocol.types.Field;
 import org.junit.jupiter.api.Assertions;
-import weka.attributeSelection.ASSearch;
 
 import java.lang.reflect.Method;
 
@@ -22,7 +19,18 @@ public class classParserTest extends TestCase {
     }
 
     public void testGetMethod() {
+
         System.out.println(cp.getMethod("org.SCAU.model.stockSerializable","getSymbol"));
+        Class<?> c= cp.getClass("org.SCAU.model.stockSerializable");
+        System.out.println(c.getSimpleName());
+        for (Method m:c.getMethods()){
+            System.out.println(m.getName());
+        }
+
+    }
+    public void testGetgetClassInstance(){
+        Object obj = cp.getClassInstance("org.SCAU.model.stockSerializable");
+        System.out.println(obj.getClass()); // 输出: class org.SCAU.model.stockSerializable
     }
 
     public void testTestGetMethod() {

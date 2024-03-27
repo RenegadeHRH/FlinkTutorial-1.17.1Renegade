@@ -1,6 +1,7 @@
 package org.SCAU.DynamicCEP.Parser;
 
 import junit.framework.TestCase;
+import org.SCAU.DynamicCEP.complier.conditionComplier;
 import org.SCAU.model.stockSerializable;
 import org.apache.flink.cep.pattern.conditions.SimpleCondition;
 
@@ -10,6 +11,7 @@ import java.util.Map;
 public class singlePatternParserTest extends TestCase {
     singlePatternParser spp=new singlePatternParser();
     conditionParser cp = new conditionParser();
+//    conditionComplier ccmp=new conditionComplier();
     public void SimpleCondition() {
         SimpleCondition<stockSerializable> sc = new SimpleCondition<stockSerializable>() {
             @Override
@@ -30,17 +32,19 @@ public class singlePatternParserTest extends TestCase {
                 //lpat: "9th":<stockSerializable>[e.adjclose>100]~~(1:3)
                 //lpat: "10th":<stockSerializable>[e.adjclose>100]·(3:)
                 //lpat: "11th":<stockSerializable>[e.adjclose>100]·(3:)_[e.adjclose<100]
-                "\"first\":<stockSerializable>[s:e.Symbol=\"FB\"]",
-                "\"second\":<stock1>[i:e.adjclose>100]",
-                "\"third\":<stock2>[i:e.adjclose>100]·(1:3)",
-                "\"fourth\":<stockSerializable>[i:e.adjclose>100]·(1:3;g)",
-                "\"fifth\":<stockSerializable>[i:e.adjclose>100]·(1:3;o)",
-                "\"7th\":<stock3>[f:e.adjclose>100]·(1:3;og)",
-                "\"eighth\":<stockSerializable>[f:e.adjclose>100]~(1:3)",
-                "\"9th\":<stockSerializable>[f:e.adjclose>100]~~(1:3)",
-                "\"10th\":<stockSerializable>[f:e.adjclose>100]·(3:)",
-                "\"11th\":<stockSerializable>[i:e.adjclose>100 | s:e.adjclose>100 | s:e.adjclose>100 ]·(3:)_[e.adjclose<100]"
+                "\"first\":<org.SCAU.model.stockSerializable>[s:e.Symbol=\"FB\"]",
+                "\"second\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100]",
+                "\"third\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100]·(1:3)",
+                "\"fourth\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100]·(1:3;g)",
+                "\"fifth\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100]·(1:3;o)",
+                "\"7th\":<org.SCAU.model.stockSerializable>[f:e.adjclose>100]·(1:3;og)",
+                "\"eighth\":<org.SCAU.model.stockSerializable>[f:e.adjclose>100]~(1:3)",
+                "\"9th\":<org.SCAU.model.stockSerializable>[f:e.adjclose>100]~~(1:3)",
+                "\"10th\":<org.SCAU.model.stockSerializable>[f:e.adjclose>100]·(3:)",
+                "\"11th\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100 | s:e.adjclose>100 | s:e.adjclose>100 ]·(3:)_[e.adjclose<100]",
+                "\"11th\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100 | s:e.adjclose>100 | s:e.adjclose>100 ]·(3:)_[e.adjclose<100]~~(3:)"
         };
+        System.out.println(stockSerializable.class);
         for (String s:patterns){
             singlePatternParser spp=new singlePatternParser(s);
             System.out .println(spp.toString());

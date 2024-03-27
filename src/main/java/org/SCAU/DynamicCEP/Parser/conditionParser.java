@@ -124,25 +124,31 @@ public class conditionParser {
         }
     }
     boolean NumOeration(String left,String op, String right) {
+        Double left1=Double.valueOf(left);
+        Double right1=Double.valueOf(right);
         if (Objects.equals(op, "!=") || Objects.equals(op, "=")){
             return left.equals(right);
         }
         if (op.equals(">=")) {
-            return left.compareTo(right)>=0;
+            return left1>=right1;
         }
         if (op.equals("<=")) {
-            return left.compareTo(right)<=0;
+            return left1<=right1;
         }
         if (op.equals(">")) {
-            return left.compareTo(right)>0;
+            return left1>right1;
         }
         if (op.equals("<")) {
-            return left.compareTo(right)<0;
+//            System.out.println(left1+" "+right1+":"+(left1 <right1));
+
+            return left1 <right1;
         }
         return false;
     }
     public boolean BinaryLogicOperation(String left,String op, String right,String type) throws Exception{
+
         if (type == "s"){
+
             return StringOperation(left,op,right);
         }else {
             return NumOeration(left,op,right);
@@ -176,6 +182,7 @@ public class conditionParser {
                 expressionString+
                 '}';
     }
+
 //    public boolean calculate(){
 //
 //    }
