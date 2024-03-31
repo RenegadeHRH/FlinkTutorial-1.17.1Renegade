@@ -29,14 +29,14 @@ public class simpleCondition {
         }
         public BinaryExpression(String Expression){
             //匹配：包含空格的左右元素以及中间的操作符
-            setOptional(Expression);
-
+//            setOptional(Expression);
+//            System.out.println(Expression);
             this.variableType=Expression.split("\\:")[0].replace("|","").replace("&","").trim();
             String rest = Expression.split("\\:")[1];
             this.left=rest.split("(>=|<|>|<=|=|!=)")[0];
             this.right=rest.split("(>=|<|>|<=|=|!=)")[1];
             this.op=rest.replace(this.left,"").replace(this.right,"");
-
+//            System.out.println(this.toString());
         }
 
         public BinaryExpression(String op, String right, String left) {

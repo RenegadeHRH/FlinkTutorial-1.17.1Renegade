@@ -3,6 +3,7 @@ package org.SCAU.DynamicCEP;
 import org.SCAU.DynamicCEP.POJOs.simpleCondition;
 import org.SCAU.DynamicCEP.Patterns.singles2;
 import org.SCAU.DynamicCEP.complier.conditionComplier;
+import org.SCAU.DynamicCEP.expose.singlePattern;
 import org.SCAU.model.stockSerializable;
 import org.apache.flink.api.common.ExecutionConfig;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
@@ -27,7 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-
+import org.SCAU.DynamicCEP.Patterns.testPaterns;
 import static org.SCAU.DynamicCEP.dataSource.parseJsonFile.parseJonFile;
 
 public class CEPDEMO2_emulation {
@@ -90,59 +91,25 @@ public class CEPDEMO2_emulation {
 //                                        }
 //                                )
 //                )
-        conditionComplier c = new conditionComplier(new simpleCondition.BinaryExpression("f:e.getHigh() < 5.5 | f:e.getLow() < 5.5"), stockSerializable.class);
 
-        Pattern<stockSerializable,stockSerializable> pattern1 = Pattern.<stockSerializable>begin("1").where(
-                conditionComplier.complie()
-        )
 
-//                .where(
-//                new SimpleCondition<stockSerializable>() {
-//                    @Override
-//                    public boolean filter(stockSerializable e) throws Exception {
-//                        return Objects.equals(e.getSymbol(), "PINS");
-//                    }
-//                }
-//        )
+        Pattern<stockSerializable,stockSerializable> pattern1 = testPaterns.Pattern1();
+
+
                 ;
-        Pattern<stockSerializable,stockSerializable> pattern2 = Pattern.<stockSerializable>begin("1").where(
-                new SimpleCondition<stockSerializable>() {
-                    @Override
-                    public boolean filter(stockSerializable e) throws Exception {
+        Pattern<stockSerializable,stockSerializable> pattern2 = testPaterns.Pattern2();
 
-//                        System.out.println(e.toString());
-                        return Float.parseFloat(e.getHigh()) < 5.5;
-                    }
-                }
-        );
-        //选择要用的模式
-//        Pattern<stockSerializable,stockSerializable> pattern=pattern2;
-//        Pattern<stockSerializable,?> pattern = new singles2().getcompoundPattern();
-//        System.out.println('1');
-//        PatternStream<stockSerializable> patternStream = CEP.pattern(keyedStream, pattern);
 
-//        patternStream.select(
-//                new RichPatternSelectFunction<stockSerializable, Object>() {
-//                    @Override
-//                    public void open(Configuration config) throws Exception {
-//                        super.open(config);
-//
-//                        // 运行时上下文
-//                        RuntimeContext context = getRuntimeContext();
-//
-//                        // 获取子任务索引
-//                        int subtaskIndex = context.getIndexOfThisSubtask();
-////                        System.out.println(context.toString());
-//                        // 打印索引
-////                        System.out.println(subtaskIndex);
-//                    }
-//                    @Override
-//                    public Object select(Map<String, List<stockSerializable>> pattern) throws Exception {
-//                        System.out.println('?');
-//                        return "?";
-//                    }
-//                }
-//        ).print("warning");
+//        String patternStr = "\"1\":<org.SCAU.model.stockSerializable>[f:e.getClose>100 | f:e.getHigh>100 & f:e.getSymbol = \"FB\" ]";
+
+        Pattern<stockSerializable,stockSerializable> pattern3 = testPaterns.Pattern3();
+        //pattern3 的验证规则
+        Pattern<stockSerializable,stockSerializable> pattern4 = testPaterns.Pattern4();
+        Pattern<stockSerializable,stockSerializable> pattern5 = testPaterns.Pattern5();
+
+
+
+
         DataStream<String> result = CEP.pattern(keyedStream, pattern1)
 //                .inEventTime()
                 .inProcessingTime()
@@ -151,7 +118,6 @@ public class CEPDEMO2_emulation {
                             StringBuilder builder = new StringBuilder();
 //                            System.out.println(p.get("1").get(0));
 
-//                            System.out.println(p.get("1").get(0));
 
                             builder.append(p.get("1").get(0))
 

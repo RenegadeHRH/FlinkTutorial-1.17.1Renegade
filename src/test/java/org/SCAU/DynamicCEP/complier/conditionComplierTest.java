@@ -37,7 +37,7 @@ public class conditionComplierTest extends TestCase {
     public void testExtractMethod() throws Exception {
 
         stockSerializable event = new stockSerializable("2022-04-04", "PINS", "7.399999618530273","27.399999618530273", "27.950000762939453", "25.5", "25.5", "16858000.0");
-        conditionComplier c = new conditionComplier(new simpleCondition.BinaryExpression("s:e.getHigh() < 27.950000762939453"), stockSerializable.class);
+        conditionComplier c = new conditionComplier(new simpleCondition.BinaryExpression("f:e.getHigh() < 27.950000762939453"), stockSerializable.class);
         String left=c.binaryExpression.getLeft();
         String op = c.binaryExpression.getOp();
         String right=c.binaryExpression.getRight();

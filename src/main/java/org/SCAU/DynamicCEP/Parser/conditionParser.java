@@ -79,6 +79,8 @@ public class conditionParser {
     public  <T extends Comparable<T>>
     boolean BinaryLogicOperation(T left,String op, T right) throws Exception
     {
+//        System.out.println(left);
+//        System.out.println(right);
 
         //        op:: =,!=,>=,<=,>,<
         if (!isValidOperator(op))
@@ -100,10 +102,14 @@ public class conditionParser {
         }
 
         if (!isNumber){
+//            System.out.println(left);
+//            System.out.println(right);
             switch (op) {
                 case "=":
+//                    System.out.println(left.equals(right));
                     return left.equals(right);
                 case "!=":
+//                    System.out.println(!left.equals(right));
                     return !left.equals(right);
                 default:
                     throw new IllegalArgumentException("String 类型不支持除了=、!=以外的操作");
@@ -133,10 +139,16 @@ public class conditionParser {
         throw new Exception("未定义错误");
     }
     boolean StringOperation(String left,String op, String right) {
+        System.out.println(
+                "left : "+ left+
+                        " right : "+right+ " op: "+op +"result :"
+        );
         switch (op) {
             case "=":
+                System.out.println(left.equals(right));
                 return left.equals(right);
             case "!=":
+                System.out.println(!left.equals(right));
                 return !left.equals(right);
             default:
                 throw new IllegalArgumentException("String 类型不支持除了=、!=以外的操作");
@@ -166,11 +178,15 @@ public class conditionParser {
         return false;
     }
     public boolean BinaryLogicOperation(String left,String op, String right,String type) throws Exception{
+//        System.out.println(type);
+//        System.out.println(this.binaryExpressions.get(0).toString());
+//        System.out.println(left+op+right);
+        if (type.equals( "s")){
 
-        if (type == "s"){
-
+            System.out.println("here");
             return StringOperation(left,op,right);
         }else {
+
             return NumOeration(left,op,right);
         }
     }

@@ -40,7 +40,7 @@ public class singlePattern {
 
     //返回值
     private Pattern<stockSerializable,stockSerializable> pattern;
-
+    private String patternStr;
     public void setNameAndClass(String name, String className){
         //setNameAndClass 1.0 由于java擦除机制，动态类型暂时搁置，固定类型为stockSerializable
         // 后续可能的解决办法：
@@ -63,8 +63,9 @@ public class singlePattern {
     }
     public singlePattern(String s) {
 
-        //"\"11th\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100 | s:e.adjclose>100 | s:e.adjclose>100 ]·(3:)_[e.adjclose<100]~~(3:)"
 
+        //"\"11th\":<org.SCAU.model.stockSerializable>[i:e.adjclose>100 | s:e.adjclose>100 | s:e.adjclose>100 ]·(3:)_[e.adjclose<100]~~(3:)"
+        this.patternStr = s;
         //解析原始语句
         singlePatternParser spp=new singlePatternParser(s);
         //开始构建规则
@@ -80,24 +81,30 @@ public class singlePattern {
         List<simpleCondition.BinaryExpression> bes= cndtP.getBinaryExpressions();
 
         for(simpleCondition.BinaryExpression be : bes){
-            new conditionComplier(be,stockSerializable.class);
-            SimpleCondition<stockSerializable> condition = conditionComplier.complie();
+//            System.out.println(be.toString());
+            conditionComplier cndtp=new conditionComplier(be,stockSerializable.class);
+//            System.out.print(conditionComplier.staticToString());
+            SimpleCondition<stockSerializable> condition;
+            condition = cndtp.complie();
             if (be.isOptional()){
+//                System.out.println("    or()");
                 this.pattern=this.pattern.or(
                         condition
                 );
             }
             else{
+//                System.out.println("    where()");
                 this.pattern.where(
+
                         condition
                 );
             }
 
         }
 
-        System.out.println(this.pattern.toString());
+//        System.out.println(this.pattern.toString());
         //解析endcondition
-        endConditionParser ecp=new endConditionParser(spp.getEndCondition());
+//        endConditionParser ecp=new endConditionParser(spp.getEndCondition());
 
         //singlePatternParser
         //conditionParser
@@ -109,4 +116,14 @@ public class singlePattern {
     }
     //动态类
 
+    public Pattern<stockSerializable, stockSerializable> getPattern() {
+        return pattern;
+    }
+
+    @Override
+    public String toString() {
+        singlePatternParser spp=new singlePatternParser(this.patternStr);
+
+        return spp.toString();
+    }
 }
