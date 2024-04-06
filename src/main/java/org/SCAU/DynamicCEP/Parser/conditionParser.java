@@ -139,18 +139,19 @@ public class conditionParser {
         throw new Exception("未定义错误");
     }
     boolean StringOperation(String left,String op, String right) {
-        System.out.println(
-                "left : "+ left+
-                        " right : "+right+ " op: "+op +"result :"
-        );
+//        System.out.println(
+//                "left : "+ left+
+//                        " right : "+right+ " op: "+op +"result :"
+//        );
         switch (op) {
             case "=":
-                System.out.println(left.equals(right));
+//                System.out.println(left.equals(right));
                 return left.equals(right);
             case "!=":
-                System.out.println(!left.equals(right));
+//                System.out.println(!left.equals(right));
                 return !left.equals(right);
             default:
+
                 throw new IllegalArgumentException("String 类型不支持除了=、!=以外的操作");
         }
     }
@@ -179,11 +180,11 @@ public class conditionParser {
     }
     public boolean BinaryLogicOperation(String left,String op, String right,String type) throws Exception{
 //        System.out.println(type);
-//        System.out.println(this.binaryExpressions.get(0).toString());
+//        System.out.println(this.binaryExpressions);
 //        System.out.println(left+op+right);
         if (type.equals( "s")){
-
-            System.out.println("here");
+//
+//            System.out.println("here");
             return StringOperation(left,op,right);
         }else {
 

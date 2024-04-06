@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/testPaterns.java" afterDir="false" />
+    <list default="true" id="e2fc25b0-f449-483b-8fea-f0f2ebecb71c" name="Changes" comment="存档1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDEMOControlGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/POJOs/quantifiers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/MemoryMonitoringJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/TimerAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/TimerUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/mySysinfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/test/LogExecutionTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/test/LogExecutionTimeDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/test/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/utils/testSystemUsage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/POJOs/quantifiersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDEMO2_emulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/CEPDEMO2_emulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/POJOs/simpleCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/POJOs/simpleCondition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/conditionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Parser/conditionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/testPaterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/Patterns/testPaterns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/complier/conditionComplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/complier/conditionComplier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/expose/singlePattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/SCAU/DynamicCEP/expose/singlePattern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/complier/conditionComplierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/complier/conditionComplierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/expose/singlePatternTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/SCAU/DynamicCEP/expose/singlePatternTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit3 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -92,6 +102,7 @@
     "Application.LoginFailDetectExample (5).executor": "Run",
     "Application.LoginFailDetectExample.executor": "Run",
     "Application.LoginFailDetectProExample.executor": "Run",
+    "Application.Main.executor": "Run",
     "Application.OrderTimeoutDetectExample.executor": "Run",
     "Application.exampleFromZhiHu.executor": "Run",
     "Application.fileSinkNoWaterMark (1).executor": "Run",
@@ -107,6 +118,7 @@
     "Application.kafkaSource.executor": "Run",
     "Application.kafkaTest1.executor": "Run",
     "Application.reflectionTest1.executor": "Run",
+    "Application.testSystemUsage.executor": "Run",
     "JUnit.classParserTest.executor": "Run",
     "JUnit.classParserTest.testExcuteMethod.executor": "Run",
     "JUnit.classParserTest.testGetDeclaredMethodsName.executor": "Run",
@@ -132,6 +144,8 @@
     "JUnit.conditionParserTest.testString2Expression.executor": "Run",
     "JUnit.endConditionParserTest.testGetCondition.executor": "Run",
     "JUnit.eventTypeTest.testTestToString.executor": "Run",
+    "JUnit.quantifiersTest.executor": "Run",
+    "JUnit.quantifiersTest.testTestToString.executor": "Run",
     "JUnit.repeatTimesParserTest.testCheck.executor": "Run",
     "JUnit.singlePatternParserTest.testGetPatternName.executor": "Run",
     "JUnit.singlePatternParserTest.testParser.executor": "Run",
@@ -139,6 +153,8 @@
     "JUnit.singlePatternTest.testSetCondition.executor": "Run",
     "JUnit.singlePatternTest.testSetNameAndClass.executor": "Run",
     "JUnit.singles2Test.testGetcompoundPattern.executor": "Run",
+    "JUnit.testSystemUsage.executor": "Run",
+    "JUnit.testSystemUsage.testSystemUsage.executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [clean...].executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [clean].executor": "Run",
     "Maven.FlinkTutorial-1.17.1Renegade [compile].executor": "Run",
@@ -157,7 +173,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "http.proxy",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -169,10 +188,10 @@
       <recent name="org.SCAU.DynamicCEP.Patterns" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.SCAU.DynamicCEP.POJOs" />
       <recent name="org.SCAU.DynamicCEP.expose" />
       <recent name="org.SCAU.DynamicCEP.complier" />
       <recent name="org.SCAU.DynamicCEP.Parser" />
-      <recent name="org.SCAU.DynamicCEP.POJOs" />
       <recent name="org.SCAU.DynamicCEP.Patterns" />
     </key>
   </component>
@@ -189,8 +208,8 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.CEPDEMO2_emulation">
-    <configuration name="CEPDEMO2_emulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.CEPDEMO2_emulation (1)">
+    <configuration name="CEPDEMO2_emulation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.CEPDEMO2_emulation" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
@@ -203,83 +222,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="conditionComplierTest.testExtractMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CEPDEMO2_emulation (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.CEPDEMO2_emulation" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.DynamicCEP.complier.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.complier" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.complier.conditionComplierTest" />
-      <option name="METHOD_NAME" value="testExtractMethod" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="singlePatternTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CEPDEMO2_emulation (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.CEPDEMO2_emulation" />
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.DynamicCEP.expose.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.expose" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.expose.singlePatternTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="quantifiersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlinkTutorial-1.17.1Renegade" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.POJOs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.POJOs" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.POJOs.quantifiersTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="singlePatternTest.testSetCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="quantifiersTest.testTestToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlinkTutorial-1.17.1Renegade" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.SCAU.DynamicCEP.expose.*" />
+          <option name="PATTERN" value="org.SCAU.DynamicCEP.POJOs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.expose" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.expose.singlePatternTest" />
-      <option name="METHOD_NAME" value="testSetCondition" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="singlePatternTest.testSetNameAndClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FlinkTutorial-1.17.1Renegade" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.SCAU.DynamicCEP.expose.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.expose" />
-      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.expose.singlePatternTest" />
-      <option name="METHOD_NAME" value="testSetNameAndClass" />
+      <option name="PACKAGE_NAME" value="org.SCAU.DynamicCEP.POJOs" />
+      <option name="MAIN_CLASS_NAME" value="org.SCAU.DynamicCEP.POJOs.quantifiersTest" />
+      <option name="METHOD_NAME" value="testTestToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CEPDEMO2_emulation" />
-      <item itemvalue="JUnit.singlePatternTest" />
-      <item itemvalue="JUnit.singlePatternTest.testSetCondition" />
-      <item itemvalue="JUnit.singlePatternTest.testSetNameAndClass" />
-      <item itemvalue="JUnit.conditionComplierTest.testExtractMethod" />
+      <item itemvalue="Application.CEPDEMO2_emulation (1)" />
+      <item itemvalue="Application.CEPDEMO2_emulation (4)" />
+      <item itemvalue="Application.CEPDEMO2_emulation (5)" />
+      <item itemvalue="JUnit.quantifiersTest" />
+      <item itemvalue="JUnit.quantifiersTest.testTestToString" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CEPDEMO2_emulation" />
-        <item itemvalue="JUnit.conditionComplierTest.testExtractMethod" />
-        <item itemvalue="JUnit.singlePatternTest" />
-        <item itemvalue="JUnit.singlePatternTest.testSetCondition" />
-        <item itemvalue="JUnit.singlePatternTest.testSetNameAndClass" />
+        <item itemvalue="Application.CEPDEMO2_emulation (1)" />
+        <item itemvalue="JUnit.quantifiersTest.testTestToString" />
+        <item itemvalue="JUnit.quantifiersTest" />
+        <item itemvalue="Application.CEPDEMO2_emulation (5)" />
+        <item itemvalue="Application.CEPDEMO2_emulation (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +333,9 @@
       <workItem from="1709990440944" duration="64813000" />
       <workItem from="1710537654980" duration="3592000" />
       <workItem from="1710830411393" duration="29800000" />
-      <workItem from="1711091461549" duration="94075000" />
+      <workItem from="1711091461549" duration="94910000" />
+      <workItem from="1711901413763" duration="20000" />
+      <workItem from="1711901446265" duration="50024000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -426,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711549571177</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="存档1">
+      <option name="closed" value="true" />
+      <created>1711884797230</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711884797230</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +460,8 @@
     <MESSAGE value="TODO:&#10;DynamicCEP" />
     <MESSAGE value="`输入流更改为json；CEP匹配成功；详见CEPDemo2、singles2、stockSerializable&#10;`更新ClassParser" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="存档1" />
+    <option name="LAST_COMMIT_MESSAGE" value="存档1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -453,5 +477,9 @@
         <watch expression="patternFlatSelectFunction" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

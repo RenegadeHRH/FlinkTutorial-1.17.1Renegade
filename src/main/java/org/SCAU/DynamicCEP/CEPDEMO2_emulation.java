@@ -1,21 +1,13 @@
 package org.SCAU.DynamicCEP;
 
-import org.SCAU.DynamicCEP.POJOs.simpleCondition;
-import org.SCAU.DynamicCEP.Patterns.singles2;
-import org.SCAU.DynamicCEP.complier.conditionComplier;
-import org.SCAU.DynamicCEP.expose.singlePattern;
+import org.SCAU.DynamicCEP.Patterns.testPaterns;
 import org.SCAU.model.stockSerializable;
 import org.apache.flink.api.common.ExecutionConfig;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.FlatMapFunction;
-import org.apache.flink.api.common.functions.RuntimeContext;
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.cep.CEP;
-import org.apache.flink.cep.PatternStream;
-import org.apache.flink.cep.RichPatternSelectFunction;
 import org.apache.flink.cep.pattern.Pattern;
-import org.apache.flink.cep.pattern.conditions.SimpleCondition;
-import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
@@ -26,13 +18,17 @@ import org.apache.flink.util.Collector;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import org.SCAU.DynamicCEP.Patterns.testPaterns;
+
 import static org.SCAU.DynamicCEP.dataSource.parseJsonFile.parseJonFile;
 
 public class CEPDEMO2_emulation {
     public static void main(String[] args) throws IOException {
+
+        Runtime r = Runtime.getRuntime();
+        r.gc();//计算内存前先垃圾回收一次
+        long stime = System.nanoTime();
+        long startMem = r.totalMemory(); // 开始Memory
+
         List<stockSerializable> stocks=parseJonFile();
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
         StreamExecutionEnvironment env= StreamExecutionEnvironment.getExecutionEnvironment();
@@ -93,24 +89,13 @@ public class CEPDEMO2_emulation {
 //                )
 
 
-        Pattern<stockSerializable,stockSerializable> pattern1 = testPaterns.Pattern1();
-
-
-                ;
-        Pattern<stockSerializable,stockSerializable> pattern2 = testPaterns.Pattern2();
-
-
-//        String patternStr = "\"1\":<org.SCAU.model.stockSerializable>[f:e.getClose>100 | f:e.getHigh>100 & f:e.getSymbol = \"FB\" ]";
-
-        Pattern<stockSerializable,stockSerializable> pattern3 = testPaterns.Pattern3();
-        //pattern3 的验证规则
-        Pattern<stockSerializable,stockSerializable> pattern4 = testPaterns.Pattern4();
-        Pattern<stockSerializable,stockSerializable> pattern5 = testPaterns.Pattern5();
+        Pattern<stockSerializable,stockSerializable> pattern = testPaterns.Pattern6();
 
 
 
 
-        DataStream<String> result = CEP.pattern(keyedStream, pattern1)
+
+        DataStream<String> result = CEP.pattern(keyedStream, pattern)
 //                .inEventTime()
                 .inProcessingTime()
                 .flatSelect(
@@ -130,14 +115,19 @@ public class CEPDEMO2_emulation {
                         Types.STRING);
 //        keyedStream.print();
         result.print();
+        long endMem =r.freeMemory(); // 末尾Memory
+        long etime = System.nanoTime();
+        //输出
 
         try {
+
             env.execute("Flink Streaming Example");
         }
         catch (Exception e){
             e.printStackTrace();
         }
 
-
+        System.out.println("用时消耗: "+String.valueOf( etime  - stime+"纳秒"));
+        System.out.println("内存消耗: "+String.valueOf((startMem- endMem)/1024)+"KB");
     }
 }
